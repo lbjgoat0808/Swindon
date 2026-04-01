@@ -16,12 +16,7 @@
     .carousel { position: relative; height: 460px; overflow: hidden; }
     .carousel-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1000ms ease; }
     .carousel-slide.active { opacity: 1; }
-    .carousel-slide img { 
-      width: 100%; 
-      height: 100%; 
-      object-fit: cover; 
-      object-position: center; 
-    }
+    .carousel-slide img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
     .carousel-caption { 
       position: absolute; bottom: 60px; left: 60px; 
       background: rgba(30,66,63,0.75); color: white; 
@@ -32,33 +27,38 @@
 </head>
 <body>
 
-  <!-- NAV - Spacious & Clean -->
+  <!-- Fixed Header / NAV -->
   <nav class="bg-white shadow-sm sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-10 py-6">
+    <div class="max-w-7xl mx-auto px-8 py-6">
       <div class="flex items-center justify-between">
-        <a href="#" class="flex-shrink-0 pr-20">
+        
+        <!-- Logo - Far left -->
+        <a href="#" class="flex-shrink-0 pr-16">
           <img src="image_eb7eb03.png" alt="Swindon Book Co. Ltd." class="h-16">
         </a>
 
-        <div class="hidden md:flex items-center gap-10 text-lg font-medium">
+        <!-- Navigation Links -->
+        <div class="hidden md:flex items-center gap-9 text-lg font-medium">
           <a href="#" class="hover:text-[#1E423F] transition-colors">Browse Catalog</a>
           <a href="#" class="hover:text-[#1E423F] transition-colors">Categories</a>
           <a href="#" class="hover:text-[#1E423F] transition-colors">Textbooks for Schools</a>
           <a href="#" class="hover:text-[#1E423F] transition-colors">Our Stores</a>
         </div>
 
-        <div class="flex-1 max-w-xl mx-12">
+        <!-- Wider, taller, balanced Search Bar -->
+        <div class="flex-1 max-w-2xl mx-10">
           <div class="relative">
             <input type="text" id="search"
                    class="w-full bg-white border border-gray-200 focus:border-[#1E423F] px-8 py-4 rounded-3xl text-base focus:outline-none shadow-sm"
                    placeholder="Search titles, authors, or ISBN...">
             <button onclick="fakeSearch()" 
-                    class="absolute right-3 top-1/2 -translate-y-1/2 crimson text-white px-9 py-3 rounded-3xl font-medium">
+                    class="absolute right-3 top-1/2 -translate-y-1/2 crimson text-white px-10 py-3.5 rounded-3xl font-medium">
               Search
             </button>
           </div>
         </div>
 
+        <!-- Shop Button -->
         <a href="https://swindonbooks.myshopify.com" target="_blank"
            class="crimson hover:bg-[#3f2123] text-white px-9 py-4 rounded-3xl font-medium transition flex-shrink-0">
           Shop on Shopify
@@ -67,24 +67,20 @@
     </div>
   </nav>
 
-  <!-- Carousel - Now with 4 slides, all fitting perfectly -->
+  <!-- Carousel (4 slides, all fit properly) -->
   <div class="carousel">
-    <!-- Fiction -->
     <div class="carousel-slide active" onclick="window.location.href='https://swindonbooks.myshopify.com/collections/fiction'" style="cursor: pointer;">
       <img src="image_876a45a4.png" alt="Fiction">
       <div class="carousel-caption">Step Into Fiction • Unveil Hidden Worlds</div>
     </div>
-    <!-- Business -->
     <div class="carousel-slide" onclick="window.location.href='https://swindonbooks.myshopify.com/collections/business'" style="cursor: pointer;">
       <img src="image_722e8f10 (1).png" alt="Business">
       <div class="carousel-caption">Build Wealth, One Page at a Time</div>
     </div>
-    <!-- Storytime Event -->
     <div class="carousel-slide" onclick="window.location.href='#'" style="cursor: pointer;">
       <img src="image_d976a0ba.png" alt="Storytime & Signing">
       <div class="carousel-caption">Storytime & Book Signing • You Can’t Tame a Tiger</div>
     </div>
-    <!-- New IB Textbooks Image -->
     <div class="carousel-slide" onclick="window.location.href='https://swindonbooks.myshopify.com/collections/textbooks'" style="cursor: pointer;">
       <img src="image_492420a2.png" alt="IB Textbooks">
       <div class="carousel-caption">IB Diploma Collection • Best-Sellers</div>
@@ -116,7 +112,7 @@
         <div class="h-48 bg-gray-100 rounded-2xl mb-4 flex items-center justify-center text-gray-400">Cover</div>
         <h3 class="font-medium">IB Biology Course Companion</h3>
         <p class="text-sm text-gray-600">Oxford • 2025 Edition</p>
-        <p class="text-[#532C2E] font-medium mt-2">Top Seller for IBDP</p>
+        <p class="text-[#532C2E] font-medium mt-2">Top Seller</p>
       </div>
       <div class="bg-white p-6 rounded-3xl shadow-sm hover:shadow-md transition">
         <div class="h-48 bg-gray-100 rounded-2xl mb-4 flex items-center justify-center text-gray-400">Cover</div>
@@ -139,7 +135,7 @@
     </div>
   </section>
 
-  <!-- Best-Selling Books (General) -->
+  <!-- Best-Selling Books -->
   <section class="max-w-7xl mx-auto px-10 py-20 bg-white">
     <h2 class="serif text-4xl tracking-widest teal text-center mb-12">Our Best-Selling Books</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -170,7 +166,35 @@
     </div>
   </section>
 
-  <!-- Floating Contact -->
+  <!-- Latest News & Promo Bar (High-end Editorial Style) -->
+  <section class="max-w-7xl mx-auto px-10 py-20 bg-[#F6F2EA]">
+    <h2 class="serif text-4xl tracking-widest teal text-center mb-12">Latest Dispatches</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-3xl overflow-hidden shadow-sm">
+        <img src="https://picsum.photos/id/1015/600/340" class="w-full h-56 object-cover" alt="">
+        <div class="p-8">
+          <h3 class="serif text-3xl tracking-widest teal">New Fiction Arrivals</h3>
+          <p class="mt-4 text-gray-700">Moody tales and luminous prose from the world’s finest storytellers.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-3xl overflow-hidden shadow-sm">
+        <img src="https://picsum.photos/id/201/600/340" class="w-full h-56 object-cover" alt="">
+        <div class="p-8">
+          <h3 class="serif text-3xl tracking-widest teal">Business & Insight</h3>
+          <p class="mt-4 text-gray-700">Timeless wisdom bound in leather and ink.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-3xl overflow-hidden shadow-sm">
+        <img src="https://picsum.photos/id/870/600/340" class="w-full h-56 object-cover" alt="">
+        <div class="p-8">
+          <h3 class="serif text-3xl tracking-widest teal">Author Events</h3>
+          <p class="mt-4 text-gray-700">Intimate evenings with writers who shape our time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating Buttons -->
   <div class="fixed bottom-10 right-10 flex flex-col gap-5 z-50">
     <a href="https://wa.me/85290354949" target="_blank" class="bg-[#25D366] w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl text-4xl hover:scale-110 transition">
       <i class="fa-brands fa-whatsapp"></i>
@@ -203,17 +227,14 @@
   <script>
     let current = 0;
     const slides = document.querySelectorAll('.carousel-slide');
-    
     function showSlide(n) {
       slides.forEach(s => s.classList.remove('active'));
       slides[n].classList.add('active');
     }
-    
     function nextSlide() {
       current = (current + 1) % slides.length;
       showSlide(current);
     }
-    
     setInterval(nextSlide, 6500);
 
     function fakeSearch() {
