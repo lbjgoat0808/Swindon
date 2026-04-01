@@ -52,12 +52,12 @@
 </head>
 <body class="bg-[#f8f1e3] text-[#1a1a1a]">
 
-  <!-- NAV - Logo moved further left with better spacing -->
+  <!-- NAV - Logo well spaced on the left -->
   <nav class="bg-white shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-6 py-4">
       <div class="flex items-center justify-between">
         
-        <!-- Logo - Far left with more space -->
+        <!-- Logo - Far left -->
         <a href="#" class="flex items-center gap-3 flex-shrink-0">
           <img src="image_eb7eb03.png" alt="Swindon Book Co. Ltd." class="h-16">
         </a>
@@ -92,11 +92,11 @@
     </div>
   </nav>
 
-  <!-- MAIN CAROUSEL -->
+  <!-- MAIN CAROUSEL - Now with 3 slides -->
   <div class="carousel">
     <!-- Fiction Slide -->
     <div class="carousel-slide active" onclick="window.location.href='https://swindonbooks.myshopify.com/collections/fiction'" style="cursor: pointer;">
-      <img src="image_26d8e6de.png" alt="Step Into Fiction">
+      <img src="image_876a45a4.png" alt="Step Into Fiction">
       <div class="carousel-caption">Step Into Fiction • Unveil Hidden Worlds</div>
     </div>
 
@@ -105,9 +105,15 @@
       <img src="image_722e8f10 (1).png" alt="Build Wealth">
       <div class="carousel-caption">Build Wealth, One Page at a Time</div>
     </div>
+
+    <!-- Storytime Event Slide -->
+    <div class="carousel-slide" onclick="window.location.href='#'" style="cursor: pointer;">
+      <img src="image_d976a0ba.png" alt="Storytime and Signing with Stephanie Sy">
+      <div class="carousel-caption">Storytime & Signing • You Can’t Tame a Tiger</div>
+    </div>
   </div>
 
-  <!-- Historical intro -->
+  <!-- Historical Intro Section -->
   <header class="max-w-7xl mx-auto px-6 py-12 bg-white">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div>
@@ -116,7 +122,8 @@
         <p class="mt-2 text-xl text-gray-700">Browse the catalog • Check availability • Buy on Shopify • Visit our stores</p>
       </div>
       <div>
-        <img src="https://i.imgur.com/YOUR-HISTORICAL-PHOTO.png" alt="Swindon Book Company 1918" class="rounded-3xl shadow-2xl w-full">
+        <!-- Real historical storefront photo -->
+        <img src="image_f33c6aba.png" alt="Swindon Book Company 1918" class="rounded-3xl shadow-2xl w-full">
       </div>
     </div>
   </header>
@@ -186,11 +193,20 @@
     </div>
   </section>
 
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/85290354949" target="_blank"
-     class="fixed bottom-8 right-8 bg-[#25D366] hover:bg-[#20c35c] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl text-4xl transition-transform hover:scale-110 z-50">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
+  <!-- Floating Buttons: WhatsApp + WeChat -->
+  <div class="fixed bottom-8 right-8 flex flex-col gap-4 z-50">
+    <!-- WhatsApp -->
+    <a href="https://wa.me/85290354949" target="_blank"
+       class="bg-[#25D366] hover:bg-[#20c35c] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl text-4xl transition-transform hover:scale-110">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    
+    <!-- WeChat -->
+    <a href="#" target="_blank" 
+       class="bg-[#07C160] hover:bg-[#06a54f] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl text-4xl transition-transform hover:scale-110">
+      <span class="font-bold text-3xl">微信</span>
+    </a>
+  </div>
 
   <!-- Footer -->
   <footer class="bg-[#1a1a1a] text-white py-16">
