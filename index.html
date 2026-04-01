@@ -12,7 +12,7 @@
     .book-card { transition: all 0.3s; }
     .book-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
    
-    /* Carousel - Smaller & better fitted */
+    /* Carousel */
     .carousel { 
       position: relative; 
       height: 380px; 
@@ -52,22 +52,25 @@
 </head>
 <body class="bg-[#f8f1e3] text-[#1a1a1a]">
 
-  <!-- NAV - Bigger Logo -->
+  <!-- NAV - Logo moved further left with better spacing -->
   <nav class="bg-white shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-6 py-4">
       <div class="flex items-center justify-between">
-        <a href="#" class="flex items-center gap-3">
-          <img src="image_eb7eb03.png" alt="Swindon Book Co. Ltd." class="h-16"> <!-- Bigger logo -->
+        
+        <!-- Logo - Far left with more space -->
+        <a href="#" class="flex items-center gap-3 flex-shrink-0">
+          <img src="image_eb7eb03.png" alt="Swindon Book Co. Ltd." class="h-16">
         </a>
 
-        <div class="hidden md:flex items-center gap-8 text-lg font-medium">
+        <!-- Navigation Links -->
+        <div class="hidden md:flex items-center gap-8 text-lg font-medium ml-12">
           <a href="#" class="hover:text-[#FF7A00]">Browse Catalog</a>
           <a href="#" class="hover:text-[#FF7A00]">Categories</a>
           <a href="#" class="hover:text-[#FF7A00]">Textbooks</a>
           <a href="#" class="hover:text-[#FF7A00]">Our Stores</a>
         </div>
 
-        <!-- Smaller search bar -->
+        <!-- Search Bar -->
         <div class="flex-1 max-w-md mx-8">
           <div class="relative">
             <input type="text" id="search"
@@ -80,15 +83,16 @@
           </div>
         </div>
 
+        <!-- Shop Button -->
         <a href="https://swindonbooks.myshopify.com" target="_blank"
-           class="bg-[#FF7A00] text-white px-7 py-3 rounded-full font-medium hover:bg-[#e66a00]">
+           class="bg-[#FF7A00] text-white px-7 py-3 rounded-full font-medium hover:bg-[#e66a00] flex-shrink-0">
           Shop on Shopify
         </a>
       </div>
     </div>
   </nav>
 
-  <!-- MAIN CAROUSEL - Smaller & Better Fitted -->
+  <!-- MAIN CAROUSEL -->
   <div class="carousel">
     <!-- Fiction Slide -->
     <div class="carousel-slide active" onclick="window.location.href='https://swindonbooks.myshopify.com/collections/fiction'" style="cursor: pointer;">
@@ -207,7 +211,6 @@
   </footer>
 
   <script>
-    // Carousel logic
     let current = 0;
     const slides = document.querySelectorAll('.carousel-slide');
    
