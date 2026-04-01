@@ -30,7 +30,7 @@
     <div class="max-w-7xl mx-auto px-6 py-4">
       <div class="flex items-center justify-between">
         <a href="#" class="flex items-center gap-3">
-          <img src="http://www.swindonbooks.com/images/logo_SW.jpg" alt="Swindon Book Co. Ltd." class="h-12">
+          <img src="https://i.imgur.com/YOUR-ORANGE-LOGO.png" alt="Swindon Book Co. Ltd." class="h-12">
         </a>
 
         <div class="hidden md:flex items-center gap-8 text-lg font-medium">
@@ -65,7 +65,7 @@
   <div class="carousel">
     <!-- Fiction Slide -->
     <div class="carousel-slide active" onclick="window.location.href='https://swindonbooks.myshopify.com/collections/fiction'" style="cursor: pointer;">
-      <img src="https://i.imgur.com/YOUR-FICTION-IMAGE.png" alt="Step Into Fiction">
+      <img src="image_722e8f10 (1).png" alt="Step Into Fiction">
       <div class="carousel-caption">Step Into Fiction • Unveil Hidden Worlds</div>
     </div>
 
@@ -133,4 +133,73 @@
       </div>
 
       <!-- Promo Card 4 (add more if needed) -->
-     
+      <div onclick="window.location.href='#'" class="book-card bg-white border rounded-3xl overflow-hidden cursor-pointer">
+        <img src="https://picsum.photos/id/870/600/340" alt="Events" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="font-semibold text-lg">Upcoming Events & Offers</h3>
+          <p class="text-sm text-gray-600 mt-2">Special promotions and in-store happenings.</p>
+          <span class="inline-block mt-4 text-[#FF7A00] font-medium">See What's On →</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="max-w-7xl mx-auto px-6 py-16">
+    <h2 class="text-3xl font-semibold mb-8">Browse by Category</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <a href="#" class="book-card bg-white p-6 rounded-3xl text-center hover:ring-4 hover:ring-[#FF7A00]">Fiction</a>
+      <a href="#" class="book-card bg-white p-6 rounded-3xl text-center hover:ring-4 hover:ring-[#FF7A00]">Children's Books</a>
+      <a href="#" class="book-card bg-white p-6 rounded-3xl text-center hover:ring-4 hover:ring-[#FF7A00]">Education & Reference</a>
+      <a href="#" class="book-card bg-white p-6 rounded-3xl text-center hover:ring-4 hover:ring-[#FF7A00]">Business & Management</a>
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/85290354949" target="_blank"
+     class="fixed bottom-8 right-8 bg-[#25D366] hover:bg-[#20c35c] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl text-4xl transition-transform hover:scale-110 z-50">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer class="bg-[#1a1a1a] text-white py-16">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 text-sm">
+      <div>
+        <h3 class="font-semibold mb-4 text-[#FF7A00]">Get in Touch</h3>
+        <p>Enquiries: enquiry@swindonbooks.com</p>
+        <p>Webstore: webstore@swindonbooks.com</p>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-4 text-[#FF7A00]">Our Stores</h3>
+        <p>Hong Kong Book Centre – Central<br>Kelly & Walsh – Admiralty</p>
+      </div>
+      <div class="text-xs opacity-75">
+        Swindon Book Co., Ltd.<br>Hong Kong’s bookstore since 1918
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Carousel logic
+    let current = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    
+    function showSlide(n) {
+      slides.forEach(s => s.classList.remove('active'));
+      slides[n].classList.add('active');
+    }
+    
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+    
+    setInterval(nextSlide, 6000);
+
+    function fakeSearch() {
+      const term = document.getElementById('search').value;
+      if (term) alert('Searching catalog for: ' + term);
+    }
+  </script>
+</body>
+</html>
