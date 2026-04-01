@@ -6,83 +6,96 @@
   <title>Swindon Books HK • Catalog Since 1918</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"></script>
   <style>
     body { font-family: system-ui, -apple-system, sans-serif; }
     .book-card { transition: all 0.3s; }
     .book-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+    .slider { position: relative; height: 420px; overflow: hidden; }
+    .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 800ms ease; }
+    .slide.active { opacity: 1; }
+    .slide img { width: 100%; height: 100%; object-fit: cover; }
+    .caption { position: absolute; bottom: 40px; left: 40px; background: rgba(0,0,0,0.5); color: white; padding: 12px 24px; border-radius: 9999px; font-size: 1.25rem; }
   </style>
-  <!-- Facebook Page Plugin -->
-  <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"></script>
 </head>
 <body class="bg-[#f8f1e3] text-[#1a1a1a]">
 
-  <!-- NAV with your orange logo -->
+  <!-- NAV with smaller search bar (B&N style) -->
   <nav class="bg-white shadow-md sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <!-- REPLACE THIS SRC WITH YOUR UPLOADED ORANGE LOGO IMAGE -->
-      <a href="#" class="flex items-center gap-3">
-        <img src="http://www.swindonbooks.com/images/logo_SW.jpg" alt="Swindon Book Co. Ltd." class="h-12">
-      </a>
-      <div class="hidden md:flex items-center gap-8 text-lg font-medium">
-        <a href="#" class="hover:text-[#FF7A00]">Browse Catalog</a>
-        <a href="#" class="hover:text-[#FF7A00]">Categories</a>
-        <a href="#" class="hover:text-[#FF7A00]">Textbooks for Schools</a>
-        <a href="#" class="hover:text-[#FF7A00]">Our Stores</a>
-      </div>
-      <a href="https://swindonbooks.myshopify.com" target="_blank" 
-         class="bg-[#FF7A00] text-white px-7 py-3 rounded-full font-medium hover:bg-[#e66a00] transition">
-        Shop on Shopify
-      </a>
-    </div>
-  </nav>
+    <div class="max-w-7xl mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <!-- Orange logo -->
+        <a href="#" class="flex items-center gap-3">
+          <img src="https://i.imgur.com/YOUR-ORANGE-LOGO.png" alt="Swindon Book Co. Ltd." class="h-12">
+        </a>
 
-  <!-- HERO – crystal clear in first 3 seconds + historical photo -->
-  <header class="bg-white py-12 md:py-20">
-    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <h1 class="text-5xl md:text-6xl font-serif leading-none text-[#1a1a1a]">
-          SWINDON BOOKS HK<br>CATALOG • SINCE <span class="text-[#FF7A00]">1918</span>
-        </h1>
-        <p class="mt-4 text-2xl text-[#1a1a1a]">English books • School textbooks • Stationery</p>
-        <p class="mt-2 text-xl text-gray-700">
-          Browse the full catalog • Check availability instantly • Buy on Shopify • Or visit our stores in Central & Admiralty
-        </p>
-        
-        <!-- Big search bar -->
-        <div class="mt-10 max-w-xl">
+        <!-- Main nav -->
+        <div class="hidden md:flex items-center gap-8 text-lg font-medium">
+          <a href="#" class="hover:text-[#FF7A00]">Browse Catalog</a>
+          <a href="#" class="hover:text-[#FF7A00]">Categories</a>
+          <a href="#" class="hover:text-[#FF7A00]">Textbooks for Schools</a>
+          <a href="#" class="hover:text-[#FF7A00]">Our Stores</a>
+        </div>
+
+        <!-- Smaller search bar -->
+        <div class="flex-1 max-w-md mx-8">
           <div class="relative">
             <input type="text" id="search" 
-                   class="w-full bg-white border-2 border-[#FF7A00] text-lg px-8 py-6 rounded-3xl focus:outline-none focus:ring-4 focus:ring-[#FF7A00]/30"
-                   placeholder="Search titles, authors, ISBN...">
+                   class="w-full bg-white border border-gray-300 focus:border-[#FF7A00] text-base px-5 py-3 rounded-full focus:outline-none"
+                   placeholder="Search by Title, Author, Keyword or ISBN">
             <button onclick="fakeSearch()" 
-                    class="absolute right-3 top-1/2 -translate-y-1/2 bg-[#FF7A00] text-white px-10 py-4 rounded-3xl text-lg font-medium">
+                    class="absolute right-2 top-1/2 -translate-y-1/2 bg-[#FF7A00] text-white px-6 py-2 rounded-full text-sm font-medium">
               Search
             </button>
           </div>
         </div>
+
+        <a href="https://swindonbooks.myshopify.com" target="_blank" 
+           class="bg-[#FF7A00] text-white px-7 py-3 rounded-full font-medium hover:bg-[#e66a00]">
+          Shop on Shopify
+        </a>
       </div>
-      
-      <!-- Historical photo (replace src with your uploaded image) -->
+    </div>
+  </nav>
+
+  <!-- HERO SLIDESHOW (B&N style) -->
+  <div class="slider">
+    <!-- Slide 1: Fiction -->
+    <div class="slide active" onclick="window.location.href='https://swindonbooks.myshopify.com/collections/fiction'" style="cursor: pointer;">
+      <img src="https://i.imgur.com/YOUR-FICTION-IMAGE.png" alt="Step Into Fiction">
+      <div class="caption">Step Into Fiction • Unveil Hidden Worlds</div>
+    </div>
+
+    <!-- Slide 2: Business -->
+    <div class="slide" onclick="window.location.href='https://swindonbooks.myshopify.com/collections/business'" style="cursor: pointer;">
+      <img src="https://i.imgur.com/YOUR-BUSINESS-IMAGE.png" alt="Build Wealth">
+      <div class="caption">Build Wealth, One Page at a Time</div>
+    </div>
+  </div>
+
+  <!-- Historical photo + quick intro (still visible right after slider) -->
+  <header class="max-w-7xl mx-auto px-6 py-12 bg-white">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
       <div>
-        <img src="https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=1024,format=auto/sites/default/files/d8/images/methode/2020/07/30/945f43a6-d146-11ea-88dd-6bec610be4a6_1320x770_103747.jpg" 
-             alt="Swindon Book Company 1918 storefront" 
-             class="rounded-3xl shadow-2xl w-full">
-        <p class="text-center text-sm text-gray-500 mt-3">Hong Kong’s bookstore since 1918</p>
+        <h1 class="text-5xl md:text-6xl font-serif leading-none">SWINDON BOOKS HK<br>CATALOG • SINCE <span class="text-[#FF7A00]">1918</span></h1>
+        <p class="mt-4 text-2xl">English books • School textbooks • Stationery</p>
+        <p class="mt-2 text-xl text-gray-700">Browse • Check availability • Buy on Shopify • Visit our stores in Central & Admiralty</p>
+      </div>
+      <div>
+        <img src="https://i.imgur.com/YOUR-HISTORICAL-PHOTO.png" alt="Swindon Book Company 1918" class="rounded-3xl shadow-2xl">
       </div>
     </div>
   </header>
 
-  <!-- MARKETING & EVENTS (moved higher up – right after hero, modern & professional) -->
-  <section class="max-w-7xl mx-auto px-6 py-12 bg-white border-t border-b">
+  <!-- Latest News & Events (professional Facebook feed) -->
+  <section class="max-w-7xl mx-auto px-6 py-12 bg-white border-t">
     <h2 class="text-3xl font-semibold mb-4 text-center">Latest News, Promotions & Events</h2>
-    <p class="text-center text-gray-600 mb-8">Fresh updates from Kelly & Walsh – our flagship store</p>
-    
-    <!-- Professional Facebook embed -->
+    <p class="text-center text-gray-600 mb-8">From Kelly & Walsh – our flagship store</p>
     <div class="fb-page mx-auto shadow-inner" 
          data-href="https://www.facebook.com/Kellyandwalsh"
          data-tabs="timeline"
          data-width="1100"
-         data-height="500"
+         data-height="480"
          data-small-header="true"
          data-adapt-container-width="true"
          data-hide-cover="false"
@@ -90,30 +103,30 @@
     </div>
   </section>
 
-  <!-- CATEGORIES + rest of site (same clean style) -->
+  <!-- Categories -->
   <section class="max-w-7xl mx-auto px-6 py-16">
     <h2 class="text-3xl font-semibold mb-8">Browse by Category</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
       <a href="#" class="book-card bg-white p-6 rounded-3xl text-center hover:ring-4 hover:ring-[#FF7A00]">Fiction</a>
       <a href="#" class="book-card bg-white p-6 rounded-3xl text-center hover:ring-4 hover:ring-[#FF7A00]">Children's Books</a>
       <a href="#" class="book-card bg-white p-6 rounded-3xl text-center hover:ring-4 hover:ring-[#FF7A00]">Education & Reference</a>
-      <a href="#" class="book-card bg-white p-6 rounded-3xl text-center hover:ring-4 hover:ring-[#FF7A00]">China & Hong Kong</a>
+      <a href="#" class="book-card bg-white p-6 rounded-3xl text-center hover:ring-4 hover:ring-[#FF7A00]">Business & Management</a>
     </div>
   </section>
 
-  <!-- FLOATING WHATSAPP BAR (professional green button) -->
-  <a href="https://wa.me/852YOURNUMBER" target="_blank"
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/85290354949" target="_blank"
      class="fixed bottom-8 right-8 bg-[#25D366] hover:bg-[#20c35c] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl text-4xl transition-transform hover:scale-110 z-50">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <!-- FOOTER with contacts -->
+  <!-- Footer -->
   <footer class="bg-[#1a1a1a] text-white py-16">
     <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 text-sm">
       <div>
         <h3 class="font-semibold mb-4 text-[#FF7A00]">Get in Touch</h3>
-        <p>Enquiries: <a href="mailto:enquiry@swindonbooks.com" class="underline">enquiry@swindonbooks.com</a></p>
-        <p>Webstore: <a href="mailto:webstore@swindonbooks.com" class="underline">webstore@swindonbooks.com</a></p>
+        <p>Enquiries: enquiry@swindonbooks.com</p>
+        <p>Webstore: webstore@swindonbooks.com</p>
       </div>
       <div>
         <h3 class="font-semibold mb-4 text-[#FF7A00]">Our Stores</h3>
@@ -126,9 +139,25 @@
   </footer>
 
   <script>
+    // Simple auto-sliding hero
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    
+    function showSlide(n) {
+      slides.forEach(s => s.classList.remove('active'));
+      slides[n].classList.add('active');
+    }
+    
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+    
+    setInterval(nextSlide, 6000); // Change every 6 seconds
+
     function fakeSearch() {
       const term = document.getElementById('search').value;
-      if (term) alert('🔍 Searching catalog for: ' + term + '\n\n(Links to Shopify in final version)');
+      if (term) alert('🔍 Searching: ' + term + '\n\n(This will link to Shopify search in the final version)');
     }
   </script>
 </body>
