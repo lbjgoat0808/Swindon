@@ -3,74 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Swindon Books HK • Catalog Since 1918</title>
+  <title>Swindon Books HK • Since 1918</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"></script>
   <style>
     body { font-family: system-ui, -apple-system, sans-serif; }
-    .book-card { transition: all 0.3s ease; }
-    .book-card:hover { transform: translateY(-6px); box-shadow: 0 25px 30px -10px rgb(0 0 0 / 0.12); }
+    .hero-text { font-family: Georgia, serif; }
     
-    /* Refined Carousel */
-    .carousel { position: relative; height: 420px; overflow: hidden; }
-    .carousel-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 900ms ease; }
+    /* Premium Carousel */
+    .carousel { position: relative; height: 460px; overflow: hidden; }
+    .carousel-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1000ms ease; }
     .carousel-slide.active { opacity: 1; }
-    .carousel-slide img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .carousel-slide img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+      object-position: center; 
+    }
     .carousel-caption { 
       position: absolute; 
-      bottom: 50px; left: 50px; 
-      background: rgba(26,26,26,0.65); 
+      bottom: 60px; left: 60px; 
+      background: rgba(26, 26, 26, 0.75); 
       color: white; 
-      padding: 14px 32px; 
-      border-radius: 9999px; 
-      font-size: 1.3rem; 
+      padding: 16px 36px; 
+      border-radius: 50px; 
+      font-size: 1.35rem; 
       font-weight: 600; 
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 10px 15px -5px rgb(0 0 0 / 0.3);
     }
   </style>
 </head>
-<body class="bg-[#f8f1e3] text-[#1a1a1a]">
+<body class="bg-[#f8f1e3] text-[#1f2a2a]">
 
-  <!-- NAV - Professional & Trustworthy -->
-  <nav class="bg-white shadow-md sticky top-0 z-50 border-b border-gray-100">
-    <div class="max-w-7xl mx-auto px-8 py-5">
+  <!-- Elegant NAV -->
+  <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-10 py-6">
       <div class="flex items-center justify-between">
-        <!-- Logo far left -->
-        <a href="#" class="flex items-center flex-shrink-0">
+        <a href="#" class="flex-shrink-0">
           <img src="image_eb7eb03.png" alt="Swindon Book Co. Ltd." class="h-16">
         </a>
 
-        <!-- Navigation -->
-        <div class="hidden md:flex items-center gap-9 text-lg font-medium">
-          <a href="#" class="hover:text-[#FF7A00] transition">Browse Catalog</a>
-          <a href="#" class="hover:text-[#FF7A00] transition">Categories</a>
-          <a href="#" class="hover:text-[#FF7A00] transition">Textbooks for Schools</a>
-          <a href="#" class="hover:text-[#FF7A00] transition">Our Stores</a>
+        <div class="hidden md:flex items-center gap-10 text-lg font-medium">
+          <a href="#" class="hover:text-[#FF7A00] transition-colors">Browse Catalog</a>
+          <a href="#" class="hover:text-[#FF7A00] transition-colors">Categories</a>
+          <a href="#" class="hover:text-[#FF7A00] transition-colors">Textbooks for Schools</a>
+          <a href="#" class="hover:text-[#FF7A00] transition-colors">Our Stores</a>
         </div>
 
-        <!-- Search -->
-        <div class="flex-1 max-w-lg mx-10">
+        <div class="flex-1 max-w-xl mx-12">
           <div class="relative">
-            <input type="text" id="search"
-                   class="w-full bg-white border border-gray-200 focus:border-[#FF7A00] text-base px-6 py-3.5 rounded-full focus:outline-none shadow-sm"
-                   placeholder="Search by Title, Author, Keyword or ISBN">
-            <button onclick="fakeSearch()"
-                    class="absolute right-2 top-1/2 -translate-y-1/2 bg-[#FF7A00] text-white px-8 py-2.5 rounded-full text-sm font-medium">
+            <input type="text" id="search" 
+                   class="w-full bg-white border border-gray-200 focus:border-[#FF7A00] px-7 py-4 rounded-3xl text-base focus:outline-none shadow-sm"
+                   placeholder="Search titles, authors, or ISBN...">
+            <button onclick="fakeSearch()" 
+                    class="absolute right-3 top-1/2 -translate-y-1/2 bg-[#FF7A00] text-white px-9 py-3 rounded-3xl font-medium">
               Search
             </button>
           </div>
         </div>
 
         <a href="https://swindonbooks.myshopify.com" target="_blank"
-           class="bg-[#FF7A00] hover:bg-[#e66a00] text-white px-8 py-3.5 rounded-full font-medium transition flex-shrink-0">
+           class="bg-[#FF7A00] hover:bg-orange-700 text-white px-9 py-4 rounded-3xl font-medium transition">
           Shop on Shopify
         </a>
       </div>
     </div>
   </nav>
 
-  <!-- MAIN CAROUSEL - Images fit perfectly -->
+  <!-- Premium Carousel -->
   <div class="carousel">
     <!-- Fiction -->
     <div class="carousel-slide active" onclick="window.location.href='https://swindonbooks.myshopify.com/collections/fiction'" style="cursor: pointer;">
@@ -84,41 +86,41 @@
       <div class="carousel-caption">Build Wealth, One Page at a Time</div>
     </div>
 
-    <!-- Storytime Event -->
+    <!-- Storytime Event - now fits better -->
     <div class="carousel-slide" onclick="window.location.href='#'" style="cursor: pointer;">
-      <img src="image_d976a0ba.png" alt="Storytime and Signing">
+      <img src="image_d976a0ba.png" alt="Storytime & Signing">
       <div class="carousel-caption">Storytime & Book Signing • You Can’t Tame a Tiger</div>
     </div>
   </div>
 
   <!-- Heritage Section -->
-  <header class="max-w-7xl mx-auto px-8 py-16 bg-white">
-    <div class="grid md:grid-cols-2 gap-16 items-center">
-      <div>
-        <h1 class="text-6xl font-serif leading-none tracking-tight">SWINDON BOOKS HK</h1>
-        <p class="text-4xl font-light mt-2">Catalog • Since <span class="text-[#FF7A00]">1918</span></p>
-        <p class="mt-8 text-2xl text-gray-700">Hong Kong’s trusted English-language bookstore for over a century.</p>
-        <p class="mt-4 text-lg text-gray-600">English books • School textbooks • Stationery • Fast local service</p>
+  <header class="max-w-7xl mx-auto px-10 py-20 bg-white">
+    <div class="grid md:grid-cols-12 gap-16 items-center">
+      <div class="md:col-span-7">
+        <h1 class="hero-text text-7xl leading-none font-light tracking-tight">Swindon Books</h1>
+        <p class="text-5xl font-light mt-3 text-[#FF7A00]">Hong Kong • Since 1918</p>
+        <p class="mt-10 text-2xl text-gray-700 max-w-2xl">A Hong Kong institution offering English books, school textbooks, and personal service for over a century.</p>
       </div>
-      <div>
-        <img src="image_f33c6aba.png" alt="Swindon Book Company 1918 storefront" class="rounded-3xl shadow-xl w-full">
+      <div class="md:col-span-5">
+        <img src="image_f33c6aba.png" alt="Swindon Book Company historical storefront" class="rounded-3xl shadow-2xl w-full">
       </div>
     </div>
   </header>
 
   <!-- Latest News & Events -->
-  <section class="max-w-7xl mx-auto px-8 py-20 bg-white">
-    <h2 class="text-3xl font-semibold text-center mb-12">Latest News, Promotions & Events</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+  <section class="max-w-7xl mx-auto px-10 py-20 bg-white">
+    <h2 class="text-4xl font-light text-center mb-16">Latest News, Promotions & Events</h2>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
       <!-- Facebook -->
-      <div class="bg-white border rounded-3xl overflow-hidden shadow-sm">
-        <div class="p-7">
-          <h3 class="font-semibold mb-5">From Kelly & Walsh</h3>
-          <div class="fb-page mx-auto" 
+      <div class="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow">
+        <div class="p-8">
+          <h3 class="font-semibold mb-6 text-xl">From Kelly & Walsh</h3>
+          <div class="fb-page" 
                data-href="https://www.facebook.com/Kellyandwalsh"
                data-tabs="timeline"
-               data-width="340"
-               data-height="420"
+               data-width="320"
+               data-height="380"
                data-small-header="true"
                data-adapt-container-width="true"
                data-hide-cover="false"
@@ -127,69 +129,68 @@
         </div>
       </div>
 
-      <!-- Promo cards (clean & trustworthy) -->
-      <div onclick="window.location.href='#'" class="book-card bg-white border rounded-3xl overflow-hidden cursor-pointer">
-        <img src="https://picsum.photos/id/1015/600/340" alt="New Fiction" class="w-full h-56 object-cover">
-        <div class="p-7">
-          <h3 class="font-semibold text-xl">New Fiction Arrivals</h3>
-          <p class="text-gray-600 mt-3">Discover the latest releases from around the world.</p>
+      <!-- Other promos - premium cards -->
+      <div onclick="window.location.href='#'" class="group bg-white border border-gray-100 rounded-3xl overflow-hidden cursor-pointer hover:shadow-xl transition">
+        <img src="https://picsum.photos/id/1015/600/340" class="w-full h-56 object-cover" alt="New Fiction">
+        <div class="p-8">
+          <h3 class="text-2xl font-light">New Fiction Arrivals</h3>
+          <p class="text-gray-600 mt-4">The latest literary voices from around the world.</p>
         </div>
       </div>
 
-      <div onclick="window.location.href='#'" class="book-card bg-white border rounded-3xl overflow-hidden cursor-pointer">
-        <img src="https://picsum.photos/id/201/600/340" alt="Business" class="w-full h-56 object-cover">
-        <div class="p-7">
-          <h3 class="font-semibold text-xl">Business & Management</h3>
-          <p class="text-gray-600 mt-3">Essential reads for professionals and students.</p>
+      <div onclick="window.location.href='#'" class="group bg-white border border-gray-100 rounded-3xl overflow-hidden cursor-pointer hover:shadow-xl transition">
+        <img src="https://picsum.photos/id/201/600/340" class="w-full h-56 object-cover" alt="Business">
+        <div class="p-8">
+          <h3 class="text-2xl font-light">Business & Insight</h3>
+          <p class="text-gray-600 mt-4">Essential reading for professionals and lifelong learners.</p>
         </div>
       </div>
 
-      <div onclick="window.location.href='#'" class="book-card bg-white border rounded-3xl overflow-hidden cursor-pointer">
-        <img src="https://picsum.photos/id/870/600/340" alt="Events" class="w-full h-56 object-cover">
-        <div class="p-7">
-          <h3 class="font-semibold text-xl">Author Events & Offers</h3>
-          <p class="text-gray-600 mt-3">Join our upcoming storytimes and special promotions.</p>
+      <div onclick="window.location.href='#'" class="group bg-white border border-gray-100 rounded-3xl overflow-hidden cursor-pointer hover:shadow-xl transition">
+        <img src="https://picsum.photos/id/870/600/340" class="w-full h-56 object-cover" alt="Events">
+        <div class="p-8">
+          <h3 class="text-2xl font-light">Author Events</h3>
+          <p class="text-gray-600 mt-4">Storytimes, signings and special in-store experiences.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Categories -->
-  <section class="max-w-7xl mx-auto px-8 py-20">
-    <h2 class="text-3xl font-semibold mb-10">Browse by Category</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-      <a href="#" class="book-card bg-white p-8 rounded-3xl text-center border hover:border-[#FF7A00]">Fiction</a>
-      <a href="#" class="book-card bg-white p-8 rounded-3xl text-center border hover:border-[#FF7A00]">Children's Books</a>
-      <a href="#" class="book-card bg-white p-8 rounded-3xl text-center border hover:border-[#FF7A00]">Education & Reference</a>
-      <a href="#" class="book-card bg-white p-8 rounded-3xl text-center border hover:border-[#FF7A00]">Business & Management</a>
+  <section class="max-w-7xl mx-auto px-10 py-20">
+    <h2 class="text-4xl font-light text-center mb-12">Browse by Category</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <a href="#" class="book-card bg-white p-10 rounded-3xl border border-gray-100 text-center text-2xl font-light hover:border-[#FF7A00] transition">Fiction</a>
+      <a href="#" class="book-card bg-white p-10 rounded-3xl border border-gray-100 text-center text-2xl font-light hover:border-[#FF7A00] transition">Children's Books</a>
+      <a href="#" class="book-card bg-white p-10 rounded-3xl border border-gray-100 text-center text-2xl font-light hover:border-[#FF7A00] transition">Education & Reference</a>
+      <a href="#" class="book-card bg-white p-10 rounded-3xl border border-gray-100 text-center text-2xl font-light hover:border-[#FF7A00] transition">Business & Management</a>
     </div>
   </section>
 
-  <!-- Floating Contact Buttons -->
-  <div class="fixed bottom-8 right-8 flex flex-col gap-4 z-50">
-    <!-- WhatsApp -->
-    <a href="https://wa.me/85290354949" target="_blank"
-       class="bg-[#25D366] hover:bg-[#20c35c] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl text-4xl transition hover:scale-110">
+  <!-- Floating Contact -->
+  <div class="fixed bottom-10 right-10 flex flex-col gap-5 z-50">
+    <a href="https://wa.me/85290354949" target="_blank" 
+       class="bg-[#25D366] w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl text-4xl hover:scale-110 transition">
       <i class="fa-brands fa-whatsapp"></i>
     </a>
-    <!-- WeChat -->
-    <a href="weixin://dl/chat?YOUR_WECHAT_ID" target="_blank"  <!-- ← Replace YOUR_WECHAT_ID with actual ID -->
-       class="bg-[#07C160] hover:bg-[#06a54f] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl text-3xl font-bold transition hover:scale-110">
+    <a href="weixin://dl/chat?YOUR_WECHAT_ID" target="_blank" 
+       class="bg-[#07C160] w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl text-3xl font-bold hover:scale-110 transition">
       微信
     </a>
   </div>
 
   <!-- Footer -->
-  <footer class="bg-[#1a1a1a] text-white py-20">
-    <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-3 gap-12 text-sm">
+  <footer class="bg-[#1a2a2a] text-white py-20">
+    <div class="max-w-7xl mx-auto px-10 grid md:grid-cols-3 gap-12 text-sm">
       <div>
-        <h3 class="font-semibold mb-6 text-[#FF7A00]">Get in Touch</h3>
-        <p class="mb-2">Enquiries: <a href="mailto:enquiry@swindonbooks.com" class="hover:underline">enquiry@swindonbooks.com</a></p>
-        <p>Webstore: <a href="mailto:webstore@swindonbooks.com" class="hover:underline">webstore@swindonbooks.com</a></p>
+        <h3 class="text-[#FF7A00] font-medium mb-6">Contact Us</h3>
+        <p>Enquiries: enquiry@swindonbooks.com</p>
+        <p class="mt-1">Webstore: webstore@swindonbooks.com</p>
       </div>
       <div>
-        <h3 class="font-semibold mb-6 text-[#FF7A00]">Our Stores</h3>
-        <p>Hong Kong Book Centre – Central<br>Kelly & Walsh – Pacific Place, Admiralty</p>
+        <h3 class="text-[#FF7A00] font-medium mb-6">Our Stores</h3>
+        <p>Hong Kong Book Centre — Central</p>
+        <p>Kelly & Walsh — Pacific Place, Admiralty</p>
       </div>
       <div class="text-xs opacity-75">
         Swindon Book Co., Ltd.<br>
@@ -212,11 +213,11 @@
       showSlide(current);
     }
     
-    setInterval(nextSlide, 6500);
+    setInterval(nextSlide, 7000);
 
     function fakeSearch() {
       const term = document.getElementById('search').value;
-      if (term) alert('Searching catalog for: ' + term);
+      if (term) alert('Searching: ' + term);
     }
   </script>
 </body>
