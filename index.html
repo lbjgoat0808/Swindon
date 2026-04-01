@@ -11,26 +11,53 @@
     body { font-family: system-ui, -apple-system, sans-serif; }
     .book-card { transition: all 0.3s; }
     .book-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
-    
-    /* Carousel */
-    .carousel { position: relative; height: 460px; overflow: hidden; }
-    .carousel-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 800ms ease-in-out; }
+   
+    /* Carousel - Smaller & better fitted */
+    .carousel { 
+      position: relative; 
+      height: 380px; 
+      overflow: hidden; 
+    }
+    .carousel-slide { 
+      position: absolute; 
+      inset: 0; 
+      opacity: 0; 
+      transition: opacity 800ms ease-in-out; 
+    }
     .carousel-slide.active { opacity: 1; }
-    .carousel-slide img { width: 100%; height: 100%; object-fit: cover; }
-    .carousel-caption { position: absolute; bottom: 50px; left: 50px; background: rgba(0,0,0,0.55); color: white; padding: 14px 28px; border-radius: 9999px; font-size: 1.35rem; font-weight: 600; }
-    
+    .carousel-slide img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+    }
+    .carousel-caption { 
+      position: absolute; 
+      bottom: 40px; 
+      left: 40px; 
+      background: rgba(0,0,0,0.55); 
+      color: white; 
+      padding: 12px 26px; 
+      border-radius: 9999px; 
+      font-size: 1.25rem; 
+      font-weight: 600; 
+    }
+   
     /* Promo Grid */
-    .promo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; }
+    .promo-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+      gap: 32px; 
+    }
   </style>
 </head>
 <body class="bg-[#f8f1e3] text-[#1a1a1a]">
 
-  <!-- NAV -->
+  <!-- NAV - Bigger Logo -->
   <nav class="bg-white shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-6 py-4">
       <div class="flex items-center justify-between">
         <a href="#" class="flex items-center gap-3">
-          <img src="image_eb7eb03.png" alt="Swindon Book Co. Ltd." class="h-12">
+          <img src="image_eb7eb03.png" alt="Swindon Book Co. Ltd." class="h-16"> <!-- Bigger logo -->
         </a>
 
         <div class="hidden md:flex items-center gap-8 text-lg font-medium">
@@ -40,20 +67,20 @@
           <a href="#" class="hover:text-[#FF7A00]">Our Stores</a>
         </div>
 
-        <!-- Smaller search -->
+        <!-- Smaller search bar -->
         <div class="flex-1 max-w-md mx-8">
           <div class="relative">
-            <input type="text" id="search" 
+            <input type="text" id="search"
                    class="w-full bg-white border border-gray-300 focus:border-[#FF7A00] text-base px-5 py-3 rounded-full focus:outline-none"
                    placeholder="Search by Title, Author, Keyword or ISBN">
-            <button onclick="fakeSearch()" 
+            <button onclick="fakeSearch()"
                     class="absolute right-2 top-1/2 -translate-y-1/2 bg-[#FF7A00] text-white px-6 py-2 rounded-full text-sm font-medium">
               Search
             </button>
           </div>
         </div>
 
-        <a href="https://swindonbooks.myshopify.com" target="_blank" 
+        <a href="https://swindonbooks.myshopify.com" target="_blank"
            class="bg-[#FF7A00] text-white px-7 py-3 rounded-full font-medium hover:bg-[#e66a00]">
           Shop on Shopify
         </a>
@@ -61,7 +88,7 @@
     </div>
   </nav>
 
-  <!-- MAIN CAROUSEL (Hero Slideshow) -->
+  <!-- MAIN CAROUSEL - Smaller & Better Fitted -->
   <div class="carousel">
     <!-- Fiction Slide -->
     <div class="carousel-slide active" onclick="window.location.href='https://swindonbooks.myshopify.com/collections/fiction'" style="cursor: pointer;">
@@ -90,16 +117,16 @@
     </div>
   </header>
 
-  <!-- NEWS & EVENTS – Horizontal Promo Grid (wide, clean, single row) -->
+  <!-- NEWS & EVENTS -->
   <section class="max-w-7xl mx-auto px-6 py-16 bg-white">
     <h2 class="text-3xl font-semibold mb-10 text-center">Latest News, Promotions & Events</h2>
-    
+   
     <div class="promo-grid">
-      <!-- Promo 1: Facebook Feed (kept professional) -->
+      <!-- Facebook Feed -->
       <div class="bg-white border rounded-3xl overflow-hidden shadow-sm">
         <div class="p-6">
           <h3 class="font-semibold mb-4">From Kelly & Walsh</h3>
-          <div class="fb-page" 
+          <div class="fb-page"
                data-href="https://www.facebook.com/Kellyandwalsh"
                data-tabs="timeline"
                data-width="380"
@@ -112,7 +139,7 @@
         </div>
       </div>
 
-      <!-- Promo Card 2 (replace image with real FB promo) -->
+      <!-- Promo Card 2 -->
       <div onclick="window.location.href='#'" class="book-card bg-white border rounded-3xl overflow-hidden cursor-pointer">
         <img src="https://picsum.photos/id/1015/600/340" alt="New Arrivals" class="w-full h-56 object-cover">
         <div class="p-6">
@@ -132,7 +159,7 @@
         </div>
       </div>
 
-      <!-- Promo Card 4 (add more if needed) -->
+      <!-- Promo Card 4 -->
       <div onclick="window.location.href='#'" class="book-card bg-white border rounded-3xl overflow-hidden cursor-pointer">
         <img src="https://picsum.photos/id/870/600/340" alt="Events" class="w-full h-56 object-cover">
         <div class="p-6">
@@ -183,17 +210,17 @@
     // Carousel logic
     let current = 0;
     const slides = document.querySelectorAll('.carousel-slide');
-    
+   
     function showSlide(n) {
       slides.forEach(s => s.classList.remove('active'));
       slides[n].classList.add('active');
     }
-    
+   
     function nextSlide() {
       current = (current + 1) % slides.length;
       showSlide(current);
     }
-    
+   
     setInterval(nextSlide, 6000);
 
     function fakeSearch() {
