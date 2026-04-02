@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Swindon Books • Since 1918</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; background-color: #F6F2EA; }
+    .serif { font-family: 'Playfair Display', Georgia, serif; }
+    .crimson-text { color: #532C2E; }
+    .crimson { background-color: #532C2E; }
+    .orange-accent { color: #FF7A00; }
+    
+    .nav-link { color: #532C2E; }
+    .nav-link:hover { color: #FF7A00; }
+
+    .about-hero { background: linear-gradient(135deg, #532C2E 0%, #6b3a3c 100%); color: white; }
+    .service-card { transition: all 300ms ease; }
+    .service-card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(83, 44, 46, 0.15); }
+    .service-icon { width: 60px; height: 60px; background-color: #FF7A00; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; margin-bottom: 16px; }
+
+    /* Modal */
+    .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); }
+    .modal.active { display: flex; align-items: center; justify-content: center; }
+    .modal-content { background-color: white; padding: 40px; border-radius: 20px; text-align: center; max-width: 400px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+    .modal-close { position: absolute; top: 20px; right: 20px; font-size: 28px; font-weight: bold; cursor: pointer; color: #999; }
+    .modal-close:hover { color: #000; }
+    .qr-code { width: 250px; height: 250px; margin: 20px auto; background-color: #f0f0f0; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+  </style>
+</head>
+<body>
+
+  <!-- Main Header / NAV -->
+  <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-8 py-4">
+      <div class="flex items-center justify-between gap-6">
+        
+        <!-- Logo -->
+        <a href="../" class="flex-shrink-0">
+          <img src="../image_eb7eb03.png" alt="Swindon Book Co. Ltd." class="h-14">
+        </a>
+
+        <!-- Navigation Links -->
+        <div class="hidden lg:flex items-center gap-8 text-base font-medium flex-shrink-0">
+          <a href="../" class="nav-link transition-colors">Browse Catalog</a>
+          <a href="#" class="nav-link transition-colors">Categories</a>
+          <a href="#" class="nav-link transition-colors">Textbooks</a>
+          <a href="../#stores" class="nav-link transition-colors">Our Stores</a>
+          <a href="./" class="nav-link transition-colors font-semibold">About Us</a>
+        </div>
+
+        <!-- Shop Button -->
+        <a href="https://swindonbooks.myshopify.com" target="_blank"
+           class="crimson hover:bg-[#3f2123] text-white px-7 py-2.5 rounded-full font-medium transition flex-shrink-0 text-sm">
+          Shop on Shopify
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="about-hero py-20">
+    <div class="max-w-7xl mx-auto px-10">
+      <h1 class="serif text-6xl font-bold mb-4">About Swindon</h1>
+      <p class="text-xl text-gray-100">Hong Kong's Premier English-Language Bookstore Since 1918</p>
+    </div>
+  </section>
+
+  <!-- Main About Section -->
+  <section class="max-w-7xl mx-auto px-10 py-20 bg-white">
+    <div class="grid md:grid-cols-2 gap-16 items-center mb-20">
+      <!-- Left: Image -->
+      <div>
+        <img src="https://d41chssnpqdne.cloudfront.net/user_upload_by_module/chat_bot/files/193236795/bBLb7SrT9Ir6Q8iA.png" alt="Swindon Book Store" class="rounded-3xl shadow-2xl w-full">
+      </div>
+
+      <!-- Right: Content -->
+      <div>
+        <h2 class="serif text-5xl crimson-text font-bold mb-6">Our Story</h2>
+        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+          <strong class="crimson-text">Swindon Book Co., Ltd.</strong> is an established leader in the books and stationery trade having started business in Hong Kong in <strong>1918</strong>. The retail outlets are strategically located in prime business and residential districts.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+          Associated companies are <strong class="crimson-text">Hong Kong Book Centre</strong> and <strong class="crimson-text">Kelly & Walsh Ltd</strong>. Besides retail, the company acts as distributor for several books and stationery companies.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          In addition to our retail stores, we actively service academic institutions, professional associations and industrial organizations in Hong Kong and overseas through our mail order department.
+        </p>
+      </div>
+    </div>
+
+    <!-- Customer Services Section -->
+    <div class="bg-[#F6F2EA] rounded-3xl p-12">
+      <h2 class="serif text-4xl crimson-text font-bold mb-12 text-center">Our Customer Services</h2>
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Service 1 -->
+        <div class="service-card bg-white p-8 rounded-2xl">
+          <div class="service-icon">
+            <i class="fas fa-shopping-bag"></i>
+          </div>
+          <h3 class="text-xl font-semibold crimson-text mb-3">Special Customer Orders</h3>
+          <p class="text-gray-700">We provide special customer orders for any book you're looking for, no matter how rare or hard to find.</p>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card bg-white p-8 rounded-2xl">
+          <div class="service-icon">
+            <i class="fas fa-globe"></i>
+          </div>
+          <h3 class="text-xl font-semibold crimson-text mb-3">International Delivery</h3>
+          <p class="text-gray-700">We ship books worldwide with reliable and secure international delivery options available.</p>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card bg-white p-8 rounded-2xl">
+          <div class="service-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3 class="text-xl font-semibold crimson-text mb-3">Helpful, Experienced Staff</h3>
+          <p class="text-gray-700">Our knowledgeable staff are experienced in all subject areas and ready to assist you.</p>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card bg-white p-8 rounded-2xl">
+          <div class="service-icon">
+            <i class="fas fa-book"></i>
+          </div>
+          <h3 class="text-xl font-semibold crimson-text mb-3">Book Information & Recommendations</h3>
+          <p class="text-gray-700">Get detailed book information, recommendations, and suggestions for special collections.</p>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card bg-white p-8 rounded-2xl">
+          <div class="service-icon">
+            <i class="fas fa-gift"></i>
+          </div>
+          <h3 class="text-xl font-semibold crimson-text mb-3">Gift Vouchers</h3>
+          <p class="text-gray-700">Perfect gifts for book lovers. Choose from various denominations and personalize your gift.</p>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card bg-white p-8 rounded-2xl">
+          <div class="service-icon">
+            <i class="fas fa-microphone"></i>
+          </div>
+          <h3 class="text-xl font-semibold crimson-text mb-3">Author Signing Events</h3>
+          <p class="text-gray-700">Join us for exclusive author signing events and literary gatherings throughout the year.</p>
+        </div>
+
+        <!-- Service 7 -->
+        <div class="service-card bg-white p-8 rounded-2xl">
+          <div class="service-icon">
+            <i class="fas fa-lock"></i>
+          </div>
+          <h3 class="text-xl font-semibold crimson-text mb-3">Suggestions for Special Collections</h3>
+          <p class="text-gray-700">We provide curated suggestions for special collections tailored to your needs.</p>
+        </div>
+
+        <!-- Service 8 -->
+        <div class="service-card bg-white p-8 rounded-2xl">
+          <div class="service-icon">
+            <i class="fas fa-lock"></i>
+          </div>
+          <h3 class="text-xl font-semibold crimson-text mb-3">Secure Online Ordering</h3>
+          <p class="text-gray-700">Secure on-line ordering is available at our website: www.swindonbooks.com</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Store Image Section -->
+  <section class="max-w-7xl mx-auto px-10 py-20 bg-white">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Content -->
+      <div>
+        <h2 class="serif text-4xl crimson-text font-bold mb-6">Visit Our Stores</h2>
+        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+          Experience the warmth and expertise of our physical locations. Our knowledgeable staff are ready to help you find your next great read.
+        </p>
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-start gap-4">
+            <span class="text-orange-accent text-2xl mt-1"><i class="fas fa-check-circle"></i></span>
+            <div>
+              <h4 class="font-semibold crimson-text">Hong Kong Book Centre</h4>
+              <p class="text-gray-600">Central • Mon–Sat 10am–7pm, Sun 11am–6pm</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="text-orange-accent text-2xl mt-1"><i class="fas fa-check-circle"></i></span>
+            <div>
+              <h4 class="font-semibold crimson-text">Kelly & Walsh</h4>
+              <p class="text-gray-600">Admiralty • Mon–Sun 10am–8pm</p>
+            </div>
+          </li>
+        </ul>
+        <a href="../#stores" class="crimson hover:bg-[#3f2123] text-white px-8 py-3 rounded-full font-medium transition inline-block">
+          View Store Locations
+        </a>
+      </div>
+
+      <!-- Image -->
+      <div>
+        <img src="https://d41chssnpqdne.cloudfront.net/user_upload_by_module/chat_bot/files/193236795/bBLb7SrT9Ir6Q8iA.png" alt="Bookstore Interior" class="rounded-3xl shadow-2xl w-full">
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="max-w-7xl mx-auto px-10 py-20 bg-[#F6F2EA]">
+    <div class="bg-white rounded-3xl p-12 shadow-lg">
+      <h2 class="serif text-4xl crimson-text font-bold mb-6 text-center">Our Mission</h2>
+      <p class="text-lg text-gray-700 leading-relaxed text-center max-w-3xl mx-auto">
+        To be Hong Kong's most trusted and accessible English-language bookstore, providing exceptional service, curated collections, and a welcoming space for readers of all ages. We are committed to connecting people with books that inspire, educate, and transform their lives.
+      </p>
+    </div>
+  </section>
+
+  <!-- Online Ordering CTA -->
+  <section class="max-w-7xl mx-auto px-10 py-20 bg-white">
+    <div class="bg-gradient-to-r from-[#532C2E] to-[#6b3a3c] rounded-3xl p-12 text-white text-center">
+      <h2 class="serif text-4xl font-bold mb-4">Shop Online</h2>
+      <p class="text-xl mb-8 text-gray-100">
+        Can't visit us in person? Browse our full catalog and place secure orders online.
+      </p>
+      <a href="https://swindonbooks.myshopify.com" target="_blank" class="bg-[#FF7A00] hover:bg-[#e56a00] text-white px-12 py-4 rounded-full font-semibold text-lg transition inline-block">
+        Shop Now on Shopify
+      </a>
+    </div>
+  </section>
+
+  <!-- Floating Buttons -->
+  <div class="fixed bottom-10 right-10 flex flex-col gap-5 z-40">
+    <a href="https://wa.me/85290354949" target="_blank" 
+       class="bg-[#25D366] w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl text-4xl hover:scale-110 transition" 
+       title="Contact via WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <button onclick="openWeChatModal()" 
+            class="bg-[#07C160] w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl text-3xl font-bold hover:scale-110 transition cursor-pointer border-none" 
+            title="Contact via WeChat">
+      微信
+    </button>
+  </div>
+
+  <!-- WeChat QR Code Modal -->
+  <div id="wechatModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeWeChatModal()">&times;</span>
+      <h2 class="serif text-3xl crimson-text mb-4">Connect on WeChat</h2>
+      <p class="text-gray-700 mb-6">Scan the QR code below to add us on WeChat</p>
+      
+      <div class="qr-code">
+        <img id="wechatQR" src="" alt="WeChat QR Code" style="width: 100%; height: 100%; object-fit: contain;">
+      </div>
+      
+      <p class="text-sm text-gray-600 mt-6">
+        <strong>WeChat ID:</strong> swindonbooks_hk
+      </p>
+      <p class="text-xs text-gray-500 mt-2">
+        Or search for "Swindon Books Hong Kong" in WeChat
+      </p>
+      
+      <button onclick="closeWeChatModal()" 
+              class="mt-6 crimson text-white px-8 py-3 rounded-full font-medium hover:bg-[#3f2123] transition border-none cursor-pointer">
+        Close
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-[#1a2a2a] text-white py-20">
+    <div class="max-w-7xl mx-auto px-10 grid md:grid-cols-4 gap-12 mb-12">
+      <div>
+        <h3 class="text-[#FF7A00] font-semibold mb-6 text-lg">Contact Us</h3>
+        <p class="text-gray-300 mb-2">Enquiries: enquiry@swindonbooks.com</p>
+        <p class="text-gray-300 mb-2">Webstore: webstore@swindonbooks.com</p>
+        <p class="text-gray-300">Phone: +852 2522 1234</p>
+      </div>
+      <div>
+        <h3 class="text-[#FF7A00] font-semibold mb-6 text-lg">Our Stores</h3>
+        <p class="text-gray-300 mb-3">Hong Kong Book Centre — Central</p>
+        <p class="text-gray-300">Kelly & Walsh — Pacific Place, Admiralty</p>
+      </div>
+      <div>
+        <h3 class="text-[#FF7A00] font-semibold mb-6 text-lg">Quick Links</h3>
+        <p class="text-gray-300 mb-2"><a href="../" class="hover:text-[#FF7A00] transition">Browse Catalog</a></p>
+        <p class="text-gray-300 mb-2"><a href="#" class="hover:text-[#FF7A00] transition">Textbooks</a></p>
+        <p class="text-gray-300"><a href="./" class="hover:text-[#FF7A00] transition">About Us</a></p>
+      </div>
+      <div>
+        <h3 class="text-[#FF7A00] font-semibold mb-6 text-lg">Follow Us</h3>
+        <div class="flex gap-4">
+          <a href="#" class="text-gray-300 hover:text-[#FF7A00] transition text-2xl"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-gray-300 hover:text-[#FF7A00] transition text-2xl"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-gray-300 hover:text-[#FF7A00] transition text-2xl"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="border-gray-700 mb-8">
+
+    <div class="text-center text-xs text-gray-500">
+      <p>Swindon Book Co., Ltd. • Hong Kong's English-language bookstore since 1918</p>
+      <p class="mt-2">© 2024 Swindon Books. All rights reserved. | <a href="#" class="hover:text-gray-300">Privacy Policy</a> | <a href="#" class="hover:text-gray-300">Terms of Service</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // ===== WECHAT MODAL FUNCTIONALITY =====
+    function openWeChatModal() {
+      const modal = document.getElementById('wechatModal');
+      const qrImg = document.getElementById('wechatQR');
+      
+      const wechatID = 'swindonbooks_hk';
+      qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent('https://weixin.qq.com/r/' + wechatID)}`;
+      
+      modal.classList.add('active');
+    }
+
+    function closeWeChatModal() {
+      const modal = document.getElementById('wechatModal');
+      modal.classList.remove('active');
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('wechatModal');
+      if (event.target === modal) {
+        modal.classList.remove('active');
+      }
+    }
+  </script>
+</body>
+</html>
+
