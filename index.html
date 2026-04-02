@@ -23,51 +23,46 @@
       padding: 12px 28px; border-radius: 50px; 
       font-size: 1.1rem; font-weight: 600; 
     }
+
+    /* WeChat QR Modal */
+    .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); }
+    .modal.active { display: flex; align-items: center; justify-content: center; }
+    .modal-content { background-color: white; padding: 40px; border-radius: 20px; text-align: center; max-width: 400px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+    .modal-close { position: absolute; top: 20px; right: 20px; font-size: 28px; font-weight: bold; cursor: pointer; color: #999; }
+    .modal-close:hover { color: #000; }
+    .qr-code { width: 250px; height: 250px; margin: 20px auto; background-color: #f0f0f0; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
   </style>
 </head>
 <body>
 
-  <!-- Fixed Header / NAV -->
+  <!-- Simplified Header / NAV (No Search Bar) -->
   <nav class="bg-white shadow-sm sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-8 py-4">
       <div class="flex items-center justify-between gap-6">
         
-        <!-- Logo - Far left -->
+        <!-- Logo -->
         <a href="#" class="flex-shrink-0">
           <img src="image_eb7eb03.png" alt="Swindon Book Co. Ltd." class="h-14">
         </a>
 
         <!-- Navigation Links -->
         <div class="hidden lg:flex items-center gap-6 text-base font-medium flex-shrink-0">
-          <a href="#" class="hover:text-[#1E423F] transition-colors">Browse</a>
+          <a href="#" class="hover:text-[#1E423F] transition-colors">Browse Catalog</a>
           <a href="#" class="hover:text-[#1E423F] transition-colors">Categories</a>
           <a href="#" class="hover:text-[#1E423F] transition-colors">Textbooks</a>
-          <a href="#stores" class="hover:text-[#1E423F] transition-colors">Stores</a>
-        </div>
-
-        <!-- Compact Search Bar -->
-        <div class="flex-1 max-w-md">
-          <div class="relative">
-            <input type="text" id="search"
-                   class="w-full bg-gray-50 border border-gray-300 focus:border-[#1E423F] px-4 py-2.5 rounded-full text-sm focus:outline-none shadow-sm"
-                   placeholder="Search titles, authors...">
-            <button onclick="fakeSearch()" 
-                    class="absolute right-1 top-1/2 -translate-y-1/2 crimson text-white px-6 py-1.5 rounded-full font-medium text-sm hover:bg-[#3f2123] transition">
-              Search
-            </button>
-          </div>
+          <a href="#stores" class="hover:text-[#1E423F] transition-colors">Our Stores</a>
         </div>
 
         <!-- Shop Button -->
         <a href="https://swindonbooks.myshopify.com" target="_blank"
            class="crimson hover:bg-[#3f2123] text-white px-7 py-2.5 rounded-full font-medium transition flex-shrink-0 text-sm">
-          Shop
+          Shop on Shopify
         </a>
       </div>
     </div>
   </nav>
 
-  <!-- Carousel (4 slides, properly fitted) -->
+  <!-- Carousel -->
   <div class="carousel">
     <div class="carousel-slide active" onclick="window.location.href='https://swindonbooks.myshopify.com/collections/fiction'" style="cursor: pointer;">
       <img src="image_876a45a4.png" alt="Fiction">
@@ -194,16 +189,16 @@
     </div>
   </section>
 
-  <!-- Store Locations with Map -->
+  <!-- Store Locations Section -->
   <section id="stores" class="max-w-7xl mx-auto px-10 py-20 bg-white">
     <h2 class="serif text-4xl tracking-widest teal text-center mb-16">Our Stores</h2>
     
-    <div class="grid md:grid-cols-2 gap-12 items-start">
+    <div class="grid md:grid-cols-2 gap-12 items-start mb-12">
       <!-- Store Info -->
       <div class="space-y-8">
         <div class="bg-[#F6F2EA] p-8 rounded-3xl">
           <h3 class="serif text-2xl teal mb-3">Hong Kong Book Centre</h3>
-          <p class="text-gray-700 mb-2"><strong>Location:</strong> Central, Hong Kong</p>
+          <p class="text-gray-700 mb-2"><strong>Address:</strong> Shop 101-102, 1/F, Landmark Centre, 15 Queen's Road Central, Central, Hong Kong</p>
           <p class="text-gray-700 mb-2"><strong>Phone:</strong> +852 2522 1234</p>
           <p class="text-gray-700 mb-4"><strong>Hours:</strong> Mon–Sat 10am–7pm, Sun 11am–6pm</p>
           <p class="text-gray-600 text-sm">Your go-to destination for fiction, non-fiction, and rare finds in the heart of Central.</p>
@@ -211,7 +206,7 @@
 
         <div class="bg-[#F6F2EA] p-8 rounded-3xl">
           <h3 class="serif text-2xl teal mb-3">Kelly & Walsh</h3>
-          <p class="text-gray-700 mb-2"><strong>Location:</strong> Pacific Place, Admiralty</p>
+          <p class="text-gray-700 mb-2"><strong>Address:</strong> Shop 215, 2/F, Pacific Place, 88 Queensway, Admiralty, Hong Kong</p>
           <p class="text-gray-700 mb-2"><strong>Phone:</strong> +852 2537 5344</p>
           <p class="text-gray-700 mb-4"><strong>Hours:</strong> Mon–Sun 10am–8pm</p>
           <p class="text-gray-600 text-sm">Premium selection of international textbooks, business books, and curated collections.</p>
@@ -219,7 +214,7 @@
       </div>
 
       <!-- Google Map -->
-      <div class="rounded-3xl overflow-hidden shadow-lg h-96">
+      <div class="rounded-3xl overflow-hidden shadow-lg h-96 w-full">
         <iframe 
           width="100%" 
           height="100%" 
@@ -234,52 +229,142 @@
   </section>
 
   <!-- Floating Buttons -->
-  <div class="fixed bottom-10 right-10 flex flex-col gap-5 z-50">
-    <a href="https://wa.me/85290354949" target="_blank" class="bg-[#25D366] w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl text-4xl hover:scale-110 transition">
+  <div class="fixed bottom-10 right-10 flex flex-col gap-5 z-40">
+    <a href="https://wa.me/85290354949" target="_blank" class="bg-[#25D366] w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl text-4xl hover:scale-110 transition" title="Contact via WhatsApp">
       <i class="fa-brands fa-whatsapp"></i>
     </a>
-    <a href="weixin://dl/chat?YOUR_WECHAT_ID" target="_blank" class="bg-[#07C160] w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl text-3xl font-bold hover:scale-110 transition">
+    <button onclick="openWeChatModal()" class="bg-[#07C160] w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl text-3xl font-bold hover:scale-110 transition" title="Contact via WeChat">
       微信
-    </a>
+    </button>
   </div>
 
-  <!-- Footer -->
+  <!-- WeChat QR Code Modal -->
+  <div id="wechatModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeWeChatModal()">&times;</span>
+      <h2 class="serif text-3xl teal mb-4">Connect on WeChat</h2>
+      <p class="text-gray-700 mb-6">Scan the QR code below to add us on WeChat</p>
+      <div class="qr-code">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://weixin.qq.com/r/YOUR_WECHAT_ID" alt="WeChat QR Code" style="width: 100%; height: 100%; object-fit: contain;">
+      </div>
+      <p class="text-sm text-gray-600 mt-6">WeChat ID: <strong>swindonbooks_hk</strong></p>
+      <button onclick="closeWeChatModal()" class="mt-6 crimson text-white px-8 py-3 rounded-full font-medium hover:bg-[#3f2123] transition">
+        Close
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer with Wide Search Bar -->
   <footer class="bg-[#1a2a2a] text-white py-20">
-    <div class="max-w-7xl mx-auto px-10 grid md:grid-cols-3 gap-12 text-sm">
-      <div>
-        <h3 class="text-[#FF7A00] font-medium mb-6">Contact Us</h3>
-        <p>Enquiries: enquiry@swindonbooks.com</p>
-        <p class="mt-1">Webstore: webstore@swindonbooks.com</p>
+    <!-- Wide Search Bar Section -->
+    <div class="bg-[#0f1a1a] py-12 mb-12">
+      <div class="max-w-5xl mx-auto px-10">
+        <h3 class="text-center text-white text-2xl font-semibold mb-6">Find Your Next Great Read</h3>
+        <div class="relative">
+          <input type="text" id="footerSearch"
+                 class="w-full bg-white border-0 focus:outline-none px-8 py-5 rounded-full text-lg shadow-xl"
+                 placeholder="Search by title, author, ISBN, or keyword...">
+          <button onclick="performFooterSearch()" 
+                  class="absolute right-2 top-1/2 -translate-y-1/2 crimson text-white px-12 py-3.5 rounded-full font-semibold hover:bg-[#3f2123] transition text-lg">
+            Search
+          </button>
+        </div>
+        <p class="text-center text-gray-400 text-sm mt-4">Browse our catalog of 10,000+ titles across all genres</p>
       </div>
-      <div>
-        <h3 class="text-[#FF7A00] font-medium mb-6">Our Stores</h3>
-        <p>Hong Kong Book Centre — Central</p>
-        <p>Kelly & Walsh — Pacific Place, Admiralty</p>
+    </div>
+
+    <!-- Footer Content -->
+    <div class="max-w-7xl mx-auto px-10">
+      <div class="grid md:grid-cols-4 gap-12 mb-12">
+        <div>
+          <h3 class="text-[#FF7A00] font-semibold mb-6 text-lg">Contact Us</h3>
+          <p class="text-gray-300 mb-2">Enquiries: enquiry@swindonbooks.com</p>
+          <p class="text-gray-300 mb-2">Webstore: webstore@swindonbooks.com</p>
+          <p class="text-gray-300">Phone: +852 2522 1234</p>
+        </div>
+        <div>
+          <h3 class="text-[#FF7A00] font-semibold mb-6 text-lg">Our Stores</h3>
+          <p class="text-gray-300 mb-3">Hong Kong Book Centre — Central</p>
+          <p class="text-gray-300">Kelly & Walsh — Pacific Place, Admiralty</p>
+        </div>
+        <div>
+          <h3 class="text-[#FF7A00] font-semibold mb-6 text-lg">Quick Links</h3>
+          <p class="text-gray-300 mb-2"><a href="#" class="hover:text-[#FF7A00] transition">Browse Catalog</a></p>
+          <p class="text-gray-300 mb-2"><a href="#" class="hover:text-[#FF7A00] transition">Textbooks</a></p>
+          <p class="text-gray-300"><a href="#stores" class="hover:text-[#FF7A00] transition">Store Locations</a></p>
+        </div>
+        <div>
+          <h3 class="text-[#FF7A00] font-semibold mb-6 text-lg">Follow Us</h3>
+          <div class="flex gap-4">
+            <a href="#" class="text-gray-300 hover:text-[#FF7A00] transition text-2xl"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-gray-300 hover:text-[#FF7A00] transition text-2xl"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-300 hover:text-[#FF7A00] transition text-2xl"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
       </div>
-      <div class="text-xs opacity-75">
-        Swindon Book Co., Ltd.<br>
-        Hong Kong's English-language bookstore since 1918
+
+      <hr class="border-gray-700 mb-8">
+
+      <div class="text-center text-xs text-gray-500">
+        <p>Swindon Book Co., Ltd. • Hong Kong's English-language bookstore since 1918</p>
+        <p class="mt-2">© 2024 Swindon Books. All rights reserved. | <a href="#" class="hover:text-gray-300">Privacy Policy</a> | <a href="#" class="hover:text-gray-300">Terms of Service</a></p>
       </div>
     </div>
   </footer>
 
   <script>
+    // ===== CAROUSEL FUNCTIONALITY =====
     let current = 0;
     const slides = document.querySelectorAll('.carousel-slide');
+    
     function showSlide(n) {
       slides.forEach(s => s.classList.remove('active'));
       slides[n].classList.add('active');
     }
+    
     function nextSlide() {
       current = (current + 1) % slides.length;
       showSlide(current);
     }
+    
     setInterval(nextSlide, 6500);
 
-    function fakeSearch() {
-      const term = document.getElementById('search').value;
-      if (term) alert('Searching: ' + term);
+    // ===== WECHAT MODAL FUNCTIONALITY =====
+    function openWeChatModal() {
+      const modal = document.getElementById('wechatModal');
+      modal.classList.add('active');
     }
+
+    function closeWeChatModal() {
+      const modal = document.getElementById('wechatModal');
+      modal.classList.remove('active');
+    }
+
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+      const modal = document.getElementById('wechatModal');
+      if (event.target === modal) {
+        modal.classList.remove('active');
+      }
+    }
+
+    // ===== FOOTER SEARCH FUNCTIONALITY =====
+    function performFooterSearch() {
+      const searchTerm = document.getElementById('footerSearch').value.trim();
+      if (searchTerm) {
+        // Redirect to Shopify search or your custom search page
+        window.location.href = `https://swindonbooks.myshopify.com/search?q=${encodeURIComponent(searchTerm)}`;
+      } else {
+        alert('Please enter a search term');
+      }
+    }
+
+    // Allow Enter key to trigger search
+    document.getElementById('footerSearch').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        performFooterSearch();
+      }
+    });
   </script>
 </body>
 </html>
