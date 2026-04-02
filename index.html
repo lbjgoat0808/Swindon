@@ -10,8 +10,9 @@
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; background-color: #F6F2EA; }
     .serif { font-family: 'Playfair Display', Georgia, serif; }
-    .teal { color: #1E423F; }
+    .teal { color: #532C2E; }
     .crimson { background-color: #532C2E; }
+    .crimson-text { color: #532C2E; }
     
     .carousel { position: relative; height: 380px; overflow: hidden; }
     .carousel-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1000ms ease; }
@@ -19,7 +20,7 @@
     .carousel-slide img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
     .carousel-caption { 
       position: absolute; bottom: 40px; left: 40px; 
-      background: rgba(30,66,63,0.85); color: white; 
+      background: rgba(83,44,46,0.85); color: white; 
       padding: 12px 28px; border-radius: 50px; 
       font-size: 1.1rem; font-weight: 600; 
     }
@@ -37,7 +38,7 @@
     .search-container { max-width: 7xl; margin: 0 auto; }
     .search-input-wrapper { position: relative; max-width: 100%; }
     .search-input-wrapper input { width: 100%; padding: 14px 20px; font-size: 16px; border: 2px solid #e5e7eb; border-radius: 50px; transition: all 300ms ease; }
-    .search-input-wrapper input:focus { outline: none; border-color: #1E423F; box-shadow: 0 0 0 3px rgba(30, 66, 63, 0.1); }
+    .search-input-wrapper input:focus { outline: none; border-color: #532C2E; box-shadow: 0 0 0 3px rgba(83, 44, 46, 0.1); }
     .search-input-wrapper button { position: absolute; right: 4px; top: 50%; transform: translateY(-50%); padding: 10px 24px; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; transition: all 200ms ease; }
 
     /* Affiliate Grid */
@@ -50,7 +51,11 @@
     @media (max-width: 768px) { .map-container { height: 350px; } }
 
     /* Location Pins */
-    .location-pin { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background-color: #1E423F; color: white; border-radius: 50px; font-size: 14px; font-weight: 600; }
+    .location-pin { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background-color: #532C2E; color: white; border-radius: 50px; font-size: 14px; font-weight: 600; }
+
+    /* Navigation Links */
+    .nav-link { color: #532C2E; }
+    .nav-link:hover { color: #FF7A00; }
   </style>
 </head>
 <body>
@@ -61,16 +66,17 @@
       <div class="flex items-center justify-between gap-6">
         
         <!-- Logo -->
-        <a href="#" class="flex-shrink-0">
+        <a href="index.html" class="flex-shrink-0">
           <img src="image_eb7eb03.png" alt="Swindon Book Co. Ltd." class="h-14">
         </a>
 
         <!-- Navigation Links -->
         <div class="hidden lg:flex items-center gap-8 text-base font-medium flex-shrink-0">
-          <a href="#" class="hover:text-[#1E423F] transition-colors">Browse Catalog</a>
-          <a href="#" class="hover:text-[#1E423F] transition-colors">Categories</a>
-          <a href="#" class="hover:text-[#1E423F] transition-colors">Textbooks</a>
-          <a href="#stores" class="hover:text-[#1E423F] transition-colors">Our Stores</a>
+          <a href="index.html" class="nav-link transition-colors">Browse Catalog</a>
+          <a href="#" class="nav-link transition-colors">Categories</a>
+          <a href="#" class="nav-link transition-colors">Textbooks</a>
+          <a href="#stores" class="nav-link transition-colors">Our Stores</a>
+          <a href="about.html" class="nav-link transition-colors font-semibold">About Us</a>
         </div>
 
         <!-- Shop Button -->
@@ -124,7 +130,7 @@
   <header class="max-w-7xl mx-auto px-10 py-24 bg-white">
     <div class="grid md:grid-cols-12 gap-16 items-center">
       <div class="md:col-span-7">
-        <h1 class="serif text-[78px] leading-none font-bold tracking-tighter teal">Swindon Books</h1>
+        <h1 class="serif text-[78px] leading-none font-bold tracking-tighter crimson-text">Swindon Books</h1>
         <p class="mt-4 text-[#532C2E] text-2xl tracking-[0.18em] font-medium uppercase">Hong Kong • Since 1918</p>
         <p class="mt-10 text-xl text-gray-700 max-w-2xl leading-[1.8]">
           Hong Kong's trusted English-language bookstore for over a century. 
@@ -139,7 +145,7 @@
 
   <!-- Best-Selling School Textbooks -->
   <section class="max-w-7xl mx-auto px-10 py-20 bg-[#F6F2EA]">
-    <h2 class="serif text-4xl tracking-widest teal text-center mb-12">Best-Selling School Textbooks</h2>
+    <h2 class="serif text-4xl tracking-widest crimson-text text-center mb-12">Best-Selling School Textbooks</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
       <div class="bg-white p-6 rounded-3xl shadow-sm hover:shadow-md transition">
         <div class="h-48 bg-gray-100 rounded-2xl mb-4 flex items-center justify-center text-gray-400">Cover</div>
@@ -170,7 +176,7 @@
 
   <!-- Best-Selling Books -->
   <section class="max-w-7xl mx-auto px-10 py-20 bg-white">
-    <h2 class="serif text-4xl tracking-widest teal text-center mb-12">Our Best-Selling Books</h2>
+    <h2 class="serif text-4xl tracking-widest crimson-text text-center mb-12">Our Best-Selling Books</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
       <div class="bg-white p-6 rounded-3xl shadow-sm hover:shadow-md transition border border-gray-100">
         <div class="h-56 bg-gray-100 rounded-2xl mb-4 flex items-center justify-center text-gray-400">Cover</div>
@@ -201,46 +207,47 @@
 
   <!-- Latest News & Promo Bar -->
   <section class="max-w-7xl mx-auto px-10 py-20 bg-[#F6F2EA]">
-    <h2 class="serif text-4xl tracking-widest teal text-center mb-12">Latest Dispatches</h2>
+    <h2 class="serif text-4xl tracking-widest crimson-text text-center mb-12">Latest Dispatches</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <div class="bg-white rounded-3xl overflow-hidden shadow-sm">
         <img src="https://picsum.photos/id/1015/600/340" class="w-full h-56 object-cover" alt="">
         <div class="p-8">
-          <h3 class="serif text-3xl tracking-widest teal">New Fiction Arrivals</h3>
+          <h3 class="serif text-3xl tracking-widest crimson-text">New Fiction Arrivals</h3>
           <p class="mt-4 text-gray-700">Moody tales and luminous prose from the world's finest storytellers.</p>
         </div>
       </div>
       <div class="bg-white rounded-3xl overflow-hidden shadow-sm">
         <img src="https://picsum.photos/id/201/600/340" class="w-full h-56 object-cover" alt="">
         <div class="p-8">
-          <h3 class="serif text-3xl tracking-widest teal">Business & Insight</h3>
+          <h3 class="serif text-3xl tracking-widest crimson-text">Business & Insight</h3>
           <p class="mt-4 text-gray-700">Timeless wisdom bound in leather and ink.</p>
         </div>
       </div>
       <div class="bg-white rounded-3xl overflow-hidden shadow-sm">
         <img src="https://picsum.photos/id/870/600/340" class="w-full h-56 object-cover" alt="">
         <div class="p-8">
-          <h3 class="serif text-3xl tracking-widest teal">Author Events</h3>
+          <h3 class="serif text-3xl tracking-widest crimson-text">Author Events</h3>
           <p class="mt-4 text-gray-700">Intimate evenings with writers who shape our time.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Store Locations Section with Map -->
+  <!-- Store Locations Section with Separate Maps -->
   <section id="stores" class="max-w-7xl mx-auto px-10 py-20 bg-white">
-    <h2 class="serif text-4xl tracking-widest teal text-center mb-16">Our Stores</h2>
+    <h2 class="serif text-4xl tracking-widest crimson-text text-center mb-16">Our Stores</h2>
     
-    <div class="grid md:grid-cols-2 gap-12 items-start mb-12">
-      <!-- Store Info Cards -->
-      <div class="space-y-8">
+    <!-- Store 1: Hong Kong Book Centre -->
+    <div class="mb-20">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <!-- Store Info -->
         <div class="bg-[#F6F2EA] p-8 rounded-3xl">
-          <h3 class="serif text-2xl teal mb-3">Hong Kong Book Centre</h3>
-          <p class="text-gray-700 mb-2"><strong>📍 Address:</strong> Shop 101-102, 1/F, Landmark Centre, 15 Queen's Road Central, Central, Hong Kong</p>
-          <p class="text-gray-700 mb-2"><strong>📞 Phone:</strong> +852 2522 1234</p>
+          <h3 class="serif text-3xl crimson-text mb-4">Hong Kong Book Centre</h3>
+          <p class="text-gray-700 mb-3"><strong>📍 Address:</strong> Shop 101-102, 1/F, Landmark Centre, 15 Queen's Road Central, Central, Hong Kong</p>
+          <p class="text-gray-700 mb-3"><strong>📞 Phone:</strong> +852 2522 1234</p>
           <p class="text-gray-700 mb-4"><strong>🕐 Hours:</strong> Mon–Sat 10am–7pm, Sun 11am–6pm</p>
-          <p class="text-gray-600 text-sm">Your go-to destination for fiction, non-fiction, and rare finds in the heart of Central.</p>
-          <div class="mt-4">
+          <p class="text-gray-600 text-sm mb-6">Your go-to destination for fiction, non-fiction, and rare finds in the heart of Central.</p>
+          <div>
             <span class="location-pin">
               <i class="fas fa-map-marker-alt"></i>
               22.2833° N, 114.1589° E
@@ -248,13 +255,45 @@
           </div>
         </div>
 
-        <div class="bg-[#F6F2EA] p-8 rounded-3xl">
-          <h3 class="serif text-2xl teal mb-3">Kelly & Walsh</h3>
-          <p class="text-gray-700 mb-2"><strong>📍 Address:</strong> Shop 215, 2/F, Pacific Place, 88 Queensway, Admiralty, Hong Kong</p>
-          <p class="text-gray-700 mb-2"><strong>📞 Phone:</strong> +852 2537 5344</p>
+        <!-- Map 1 -->
+        <div class="map-container">
+          <iframe 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            loading="lazy" 
+            allowfullscreen="" 
+            referrerpolicy="no-referrer-when-downgrade" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.8558432850557!2d114.1589!3d22.2833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404007d3e7d7d7d%3A0x1234567890ab!2sHong%20Kong%20Book%20Centre%20-%20Central!5e0!3m2!1sen!2shk!4v1234567890">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Store 2: Kelly & Walsh -->
+    <div>
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <!-- Map 2 (on left for visual variety) -->
+        <div class="map-container order-2 md:order-1">
+          <iframe 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            loading="lazy" 
+            allowfullscreen="" 
+            referrerpolicy="no-referrer-when-downgrade" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.7849!2d114.1745!3d22.2766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404007d3e7d7d7d%3A0x5678901234cd!2sKelly%20%26%20Walsh%20-%20Admiralty!5e0!3m2!1sen!2shk!4v1234567890">
+          </iframe>
+        </div>
+
+        <!-- Store Info -->
+        <div class="bg-[#F6F2EA] p-8 rounded-3xl order-1 md:order-2">
+          <h3 class="serif text-3xl crimson-text mb-4">Kelly & Walsh</h3>
+          <p class="text-gray-700 mb-3"><strong>📍 Address:</strong> Shop 215, 2/F, Pacific Place, 88 Queensway, Admiralty, Hong Kong</p>
+          <p class="text-gray-700 mb-3"><strong>📞 Phone:</strong> +852 2537 5344</p>
           <p class="text-gray-700 mb-4"><strong>🕐 Hours:</strong> Mon–Sun 10am–8pm</p>
-          <p class="text-gray-600 text-sm">Premium selection of international textbooks, business books, and curated collections.</p>
-          <div class="mt-4">
+          <p class="text-gray-600 text-sm mb-6">Premium selection of international textbooks, business books, and curated collections.</p>
+          <div>
             <span class="location-pin">
               <i class="fas fa-map-marker-alt"></i>
               22.2766° N, 114.1745° E
@@ -262,35 +301,12 @@
           </div>
         </div>
       </div>
-
-      <!-- Interactive Google Map -->
-      <div class="map-container">
-        <iframe 
-          width="100%" 
-          height="100%" 
-          style="border:0;" 
-          loading="lazy" 
-          allowfullscreen="" 
-          referrerpolicy="no-referrer-when-downgrade" 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.8558432850557!2d114.1589!3d22.2833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404007d3e7d7d7d%3A0x1234567890ab!2sHong%20Kong%20Book%20Centre%20-%20Central!5e0!3m2!1sen!2shk!4v1234567890">
-        </iframe>
-      </div>
-    </div>
-
-    <!-- Map Legend -->
-    <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg mt-8">
-      <h4 class="font-semibold text-blue-900 mb-3">📌 Map Information</h4>
-      <ul class="text-sm text-blue-800 space-y-2">
-        <li><strong>Central Location:</strong> 22.2833° N, 114.1589° E - Hong Kong Book Centre</li>
-        <li><strong>Admiralty Location:</strong> 22.2766° N, 114.1745° E - Kelly & Walsh</li>
-        <li>Use the map above to get directions, view street view, and find nearby amenities</li>
-      </ul>
     </div>
   </section>
 
   <!-- Our Affiliates Section -->
   <section class="max-w-7xl mx-auto px-10 py-20 bg-[#F6F2EA]">
-    <h2 class="serif text-4xl tracking-widest teal text-center mb-4">Our Affiliates & Partners</h2>
+    <h2 class="serif text-4xl tracking-widest crimson-text text-center mb-4">Our Affiliates & Partners</h2>
     <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
       We proudly partner with leading educational publishers and bookstores to bring you the finest selection of books and resources.
     </p>
@@ -388,7 +404,7 @@
   <div id="wechatModal" class="modal">
     <div class="modal-content">
       <span class="modal-close" onclick="closeWeChatModal()">&times;</span>
-      <h2 class="serif text-3xl teal mb-4">Connect on WeChat</h2>
+      <h2 class="serif text-3xl crimson-text mb-4">Connect on WeChat</h2>
       <p class="text-gray-700 mb-6">Scan the QR code below to add us on WeChat</p>
       
       <div class="qr-code">
@@ -425,9 +441,9 @@
       </div>
       <div>
         <h3 class="text-[#FF7A00] font-semibold mb-6 text-lg">Quick Links</h3>
-        <p class="text-gray-300 mb-2"><a href="#" class="hover:text-[#FF7A00] transition">Browse Catalog</a></p>
+        <p class="text-gray-300 mb-2"><a href="index.html" class="hover:text-[#FF7A00] transition">Browse Catalog</a></p>
         <p class="text-gray-300 mb-2"><a href="#" class="hover:text-[#FF7A00] transition">Textbooks</a></p>
-        <p class="text-gray-300"><a href="#stores" class="hover:text-[#FF7A00] transition">Store Locations</a></p>
+        <p class="text-gray-300"><a href="about.html" class="hover:text-[#FF7A00] transition">About Us</a></p>
       </div>
       <div>
         <h3 class="text-[#FF7A00] font-semibold mb-6 text-lg">Follow Us</h3>
