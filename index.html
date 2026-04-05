@@ -11,8 +11,8 @@
     body { font-family: 'Inter', system-ui, sans-serif; background-color: #F6F2EA; }
     .serif { font-family: 'Playfair Display', Georgia, serif; }
     .crimson-text { color: #532C2E; }
-    .crimson { background-color: #FF6215; }   /* ← Changed only this */
-   
+    .crimson { background-color: #532C2E; }
+    
     .carousel { position: relative; height: 380px; overflow: hidden; }
     .carousel-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1000ms ease; }
     .carousel-slide.active { opacity: 1; }
@@ -37,11 +37,7 @@
     .search-input-wrapper { position: relative; max-width: 100%; }
     .search-input-wrapper input { width: 100%; padding: 14px 20px; font-size: 16px; border: 2px solid #e5e7eb; border-radius: 50px; transition: all 300ms ease; }
     .search-input-wrapper input:focus { outline: none; border-color: #532C2E; box-shadow: 0 0 0 3px rgba(83, 44, 46, 0.1); }
-    .search-input-wrapper button { 
-      position: absolute; right: 4px; top: 50%; transform: translateY(-50%); 
-      padding: 10px 24px; border-radius: 50px; border: none; cursor: pointer; 
-      font-weight: 600; transition: all 200ms ease; 
-    }
+    .search-input-wrapper button { position: absolute; right: 4px; top: 50%; transform: translateY(-50%); padding: 10px 24px; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; transition: all 200ms ease; }
 
     /* Affiliate Grid */
     .affiliate-logo { height: 120px; display: flex; align-items: center; justify-content: center; background-color: #f9f9f9; border-radius: 12px; padding: 16px; transition: transform 300ms ease, box-shadow 300ms ease; }
@@ -66,7 +62,7 @@
   <nav class="bg-white shadow-sm sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-8 py-4">
       <div class="flex items-center justify-between gap-6">
-       
+        
         <!-- Logo -->
         <a href="./" class="flex-shrink-0">
           <img src="image_eb7eb03.png" alt="Swindon Book Co. Ltd." class="h-14">
@@ -238,7 +234,7 @@
   <!-- Store Locations Section with Separate Maps -->
   <section id="stores" class="max-w-7xl mx-auto px-10 py-20 bg-white">
     <h2 class="serif text-4xl tracking-widest crimson-text text-center mb-16">Our Stores</h2>
-   
+    
     <!-- Store 1: Hong Kong Book Centre -->
     <div class="mb-20">
       <div class="grid md:grid-cols-2 gap-12 items-start">
@@ -363,18 +359,18 @@
       <span class="modal-close" onclick="closeWeChatModal()">&times;</span>
       <h2 class="serif text-3xl crimson-text mb-4">Connect on WeChat</h2>
       <p class="text-gray-700 mb-6">Scan the QR code below to add us on WeChat</p>
-     
+      
       <div class="qr-code">
         <img id="wechatQR" src="" alt="WeChat QR Code" style="width: 100%; height: 100%; object-fit: contain;">
       </div>
-     
+      
       <p class="text-sm text-gray-600 mt-6">
         <strong>WeChat ID:</strong> swindonbooks_hk
       </p>
       <p class="text-xs text-gray-500 mt-2">
         Or search for "Swindon Books Hong Kong" in WeChat
       </p>
-     
+      
       <button onclick="closeWeChatModal()" 
               class="mt-6 crimson text-white px-8 py-3 rounded-full font-medium hover:bg-[#3f2123] transition border-none cursor-pointer">
         Close
@@ -424,17 +420,17 @@
     // ===== CAROUSEL FUNCTIONALITY =====
     let current = 0;
     const slides = document.querySelectorAll('.carousel-slide');
-   
+    
     function showSlide(n) {
       slides.forEach(s => s.classList.remove('active'));
       slides[n].classList.add('active');
     }
-   
+    
     function nextSlide() {
       current = (current + 1) % slides.length;
       showSlide(current);
     }
-   
+    
     setInterval(nextSlide, 6500);
 
     // ===== HEADER SEARCH FUNCTIONALITY =====
@@ -451,10 +447,10 @@
     function openWeChatModal() {
       const modal = document.getElementById('wechatModal');
       const qrImg = document.getElementById('wechatQR');
-     
+      
       const wechatID = 'swindonbooks_hk';
       qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent('https://weixin.qq.com/r/' + wechatID)}`;
-     
+      
       modal.classList.add('active');
     }
 
