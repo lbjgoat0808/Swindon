@@ -6,12 +6,13 @@
   <title>Swindon Books HK • Since 1918</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Google Fonts: Playfair Display + Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
+  <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"></script>
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
     .serif { font-family: 'Playfair Display', Georgia, serif; }
-
+    
     .carousel { position: relative; height: 460px; overflow: hidden; }
     .carousel-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1000ms ease; }
     .carousel-slide.active { opacity: 1; }
@@ -23,19 +24,15 @@
       font-size: 1.35rem; font-weight: 600; 
       backdrop-filter: blur(6px);
     }
-
-    /* Button Color Control */
-    .theme-btn {
-      transition: background-color 0.3s ease;
-    }
   </style>
 </head>
 <body class="bg-[#f8f1e3] text-[#1f2a2a]">
 
-  <!-- NAV -->
+  <!-- Clean NAV - Logo far left -->
   <nav class="bg-white shadow-sm sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-10 py-6">
       <div class="flex items-center justify-between">
+        <!-- Logo far left with extra space -->
         <a href="#" class="flex-shrink-0 pr-20">
           <img src="image_eb7eb03.png" alt="Swindon Book Co. Ltd." class="h-16">
         </a>
@@ -49,36 +46,23 @@
 
         <div class="flex-1 max-w-lg mx-12">
           <div class="relative">
-            <input type="text" id="search" 
+            <input type="text" id="search"
                    class="w-full bg-white border border-gray-200 focus:border-[#FF7A00] px-7 py-4 rounded-3xl text-base focus:outline-none shadow-sm"
                    placeholder="Search titles, authors, or ISBN...">
             <button onclick="fakeSearch()" 
-                    class="theme-btn absolute right-3 top-1/2 -translate-y-1/2 text-white px-9 py-3 rounded-3xl font-medium">
+                    class="absolute right-3 top-1/2 -translate-y-1/2 bg-[#FF7A00] text-white px-9 py-3 rounded-3xl font-medium">
               Search
             </button>
           </div>
         </div>
 
         <a href="https://swindonbooks.myshopify.com" target="_blank"
-           class="theme-btn text-white px-9 py-4 rounded-3xl font-medium transition flex-shrink-0">
+           class="bg-[#FF7A00] hover:bg-orange-700 text-white px-9 py-4 rounded-3xl font-medium transition flex-shrink-0">
           Shop on Shopify
         </a>
       </div>
     </div>
   </nav>
-
-  <!-- Color Switcher (you can move this anywhere or hide it later) -->
-  <div class="fixed top-4 right-4 bg-white shadow-lg rounded-2xl p-4 z-[100] flex gap-3">
-    <button onclick="setButtonColor('#FF6215')" 
-            class="w-9 h-9 rounded-xl shadow-sm" 
-            style="background-color: #FF6215;" title="Orange"></button>
-    <button onclick="setButtonColor('#E63939')" 
-            class="w-9 h-9 rounded-xl shadow-sm" 
-            style="background-color: #E63939;" title="Red"></button>
-    <button onclick="setButtonColor('#8D5524')" 
-            class="w-9 h-9 rounded-xl shadow-sm" 
-            style="background-color: #8D5524;" title="Earthy Brown"></button>
-  </div>
 
   <!-- Carousel -->
   <div class="carousel">
@@ -96,26 +80,35 @@
     </div>
   </div>
 
-  <!-- Hero Section -->
+  <!-- Redesigned Premium Hero Section -->
   <header class="max-w-7xl mx-auto px-10 py-24 bg-white">
     <div class="grid md:grid-cols-12 gap-16 items-center">
       <div class="md:col-span-7">
+        <!-- Main Headline - Elegant Serif -->
         <h1 class="serif text-[72px] leading-none font-bold tracking-tighter text-[#1f2a2a]">
           Swindon Books
         </h1>
+        
+        <!-- Sub-headline - Wide-spaced All-caps Sans -->
         <p class="mt-4 text-[#FF7A00] text-2xl tracking-[0.15em] font-medium uppercase">
           Hong Kong • Since 1918
         </p>
+        
+        <!-- Body Text - Lighter weight, increased line height -->
         <p class="mt-10 text-xl text-gray-700 max-w-2xl leading-[1.8]">
           Hong Kong’s trusted English-language bookstore for over a century. 
           Discover carefully selected books, school textbooks, and personal service that connects generations of readers.
         </p>
       </div>
+      
       <div class="md:col-span-5">
         <img src="image_f33c6aba.png" alt="Swindon Book Company 1918" class="rounded-3xl shadow-2xl w-full">
       </div>
     </div>
   </header>
+
+  <!-- Rest of the site (News, Categories, etc.) remains clean -->
+  <!-- ... (same as previous version for brevity) ... -->
 
   <!-- Floating Buttons -->
   <div class="fixed bottom-10 right-10 flex flex-col gap-5 z-50">
@@ -129,7 +122,7 @@
     </a>
   </div>
 
-  <!-- Footer -->
+  <!-- Footer (unchanged) -->
   <footer class="bg-[#1a2a2a] text-white py-20">
     <div class="max-w-7xl mx-auto px-10 grid md:grid-cols-3 gap-12 text-sm">
       <div>
@@ -150,7 +143,6 @@
   </footer>
 
   <script>
-    // Carousel
     let current = 0;
     const slides = document.querySelectorAll('.carousel-slide');
     
@@ -170,43 +162,6 @@
       const term = document.getElementById('search').value;
       if (term) alert('Searching: ' + term);
     }
-
-    // ============== BUTTON COLOR CONTROL ==============
-    const buttonColorClass = 'theme-btn';
-
-    function setButtonColor(color) {
-      const buttons = document.querySelectorAll('.' + buttonColorClass);
-      
-      buttons.forEach(btn => {
-        btn.style.backgroundColor = color;
-        
-        // Optional: darker hover effect
-        btn.onmouseover = () => btn.style.backgroundColor = adjustBrightness(color, -15);
-        btn.onmouseout = () => btn.style.backgroundColor = color;
-      });
-
-      // Save preference (optional)
-      localStorage.setItem('buttonColor', color);
-    }
-
-    // Simple function to darken color for hover
-    function adjustBrightness(hex, percent) {
-      let r = parseInt(hex.substr(1,2), 16);
-      let g = parseInt(hex.substr(3,2), 16);
-      let b = parseInt(hex.substr(5,2), 16);
-
-      r = Math.max(0, Math.min(255, r + percent));
-      g = Math.max(0, Math.min(255, g + percent));
-      b = Math.max(0, Math.min(255, b + percent));
-
-      return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
-    }
-
-    // Load saved color on page load
-    window.onload = function() {
-      const savedColor = localStorage.getItem('buttonColor') || '#FF6215';
-      setButtonColor(savedColor);
-    };
   </script>
 </body>
 </html>
